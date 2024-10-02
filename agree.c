@@ -5,8 +5,12 @@ int main(void)
 {
     char c = get_char("Do you agree>\n");
 
-    if(c='y'||c='Y')
+    if(c=='y'||c=='Y')
     {
-        printf("Agree!\n");
+        printf("Agreed!\n");
+    }
+    if(c=='n'||c=='N')
+    {
+        printf("Not Agreed!\n");
     }
 }
