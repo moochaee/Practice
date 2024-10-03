@@ -3,6 +3,7 @@
 
 int calculate_quarters(int cents);
 
+
 int main(void)
 {
     // Prompt the user for change owed, in cents
@@ -33,4 +34,6 @@ int calculate_quarters(int cents)
 }
 
     // Calculate how many dimes you should give customer
+    int dimes = calculate_dimes(cents);
     // Subtract the value of those dimes from remaining cents
+    cents = cents - (dimes * 10);
