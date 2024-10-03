@@ -31,3 +31,6 @@ int calculate_quarters(int cents)
     }
     return quarters;
 }
+
+    // Calculate how many dimes you should give customer
+    // Subtract the value of those dimes from remaining cents
