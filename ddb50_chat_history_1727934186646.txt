@@ -1,0 +1,52 @@
+user: expected function body after function declarator
+
+assistant: It sounds like you might be missing the body of a function. Could you show me the function declaration and the code around it? This will help me understand the context and provide more specific guidance.
+
+user: // Print an n-by-n grid of bricks
+
+assistant: It looks like you have a comment describing what you want to do, but I don't see the function declaration or body. Could you provide the function declaration and any code you have so far? This will help me understand where the issue might be.
+
+user: #include <cs50.h>
+#include <stdio.h>
+
+int main (void)
+
+assistant: It looks like you have the start of your `main` function, but you're missing the body. You need to add curly braces `{}` to define the body of the function. For example:
+
+```c
+int main(void)
+{
+    // Your code here
+}
+```
+
+What do you want the function to do inside the body?
+
+user: #include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+string = get_string("What's your name?\n");
+}
+{
+    printf("%s\n");
+}
+
+assistant: It looks like there are a few issues with your code. Let's break it down:
+
+1. You need to declare a variable to store the string.
+2. The `printf` statement should be inside the same block as the `get_string` function.
+3. The `printf` statement needs a format specifier and the variable to print.
+
+Here's a hint on how to structure it:
+
+```c
+int main(void)
+{
+    string name = get_string("What's your name?\n");
+    printf("Hello, %s\n", name);
+}
+```
+
+Can you try to implement these changes and see if it works?
