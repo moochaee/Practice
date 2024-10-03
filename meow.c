@@ -1,16 +1,16 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main(void)
-void meow(void)
+
+void meow(int n)
 {
     printf("meow\n");
 }
-
+int main(void)
 {
 for (int i =0;i<3;i++)
 
 {
-    printf("meow\n");
+    meow(15);
 }
 }
