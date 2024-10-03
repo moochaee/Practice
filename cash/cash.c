@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int calculate_quarters(int cents);
+
 int main(void)
 {
     // Prompt the user for change owed, in cents
@@ -26,6 +28,7 @@ int main(void)
 }
 
     // Subtract the value of those quarters from cents
+    
 
     // Calculate how many dimes you should give customer
     // Subtract the value of those dimes from remaining cents
