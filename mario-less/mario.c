@@ -11,7 +11,7 @@ int main(void)
     {
         n = get_int("Height: ");
     }
-    while (n < 1, n > 9);
+    while (n < 1 || n > 9);
 
     // Print a pyramid of that height
     for (int i = 0; i < n; i++)
