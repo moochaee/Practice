@@ -19,6 +19,11 @@ int main(void)
 
     // Subtract the value of those quarters from cents
     cents = cents - (quarters * 25);
+    // Calculate how many dimes you should give customer
+    int dimes = calculate_dimes(cents);
+    // Subtract the value of those dimes from remaining cents
+    cents = cents - (dimes * 10);
+
 }
 
 int calculate_quarters(int cents)
@@ -33,10 +38,6 @@ int calculate_quarters(int cents)
     return quarters;
 }
 
-    // Calculate how many dimes you should give customer
-    int dimes = calculate_dimes(cents);
-    // Subtract the value of those dimes from remaining cents
-    cents = cents - (dimes * 10);
 
 int calculate_dimes(int cents)
 {
@@ -47,4 +48,5 @@ int calculate_dimes(int cents)
         dimes++;
         cents = cents -10;
     }
+    return dimes;
 }
