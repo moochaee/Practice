@@ -57,7 +57,7 @@ int main(void)
 
     // Print that sum
 
-    printf(Total_coins: %i\n", total_coins);
+    printf(total_coins: %i\n", total_coins);
 
 }
 
