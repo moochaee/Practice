@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 int main(void)
-void main(int n)
+
 {
-int i = 3;
-while(i>0)
+int i = 0;
+while(i<3)
 
 {
     printf("meow\n");
-i--;
+i++;
 }
 }
