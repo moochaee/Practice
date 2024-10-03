@@ -18,6 +18,14 @@ int main(void)
     }
     while (cents < 0);
 
+    // Sum the number of quarters, dimes, nickels, and pennies used
+    
+
+    // Print that sum
+
+
+
+
     // Calculate how many quarters you should give customer
     int quarters = calculate_quarters(cents);
 
