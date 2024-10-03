@@ -18,15 +18,6 @@ int main(void)
     }
     while (cents < 0);
 
-    // Sum the number of quarters, dimes, nickels, and pennies used
-
-    int total_coins = quarters + dimes + nickels + pennies
-
-
-    // Print that sum
-{
-    printf(Total_coins: %i\n", total_coins);
-}
 
     // Calculate how many quarters you should give customer
     int quarters = calculate_quarters(cents);
@@ -58,6 +49,15 @@ int main(void)
 
     // Subtract the value of those nickels from remaining cents
     cents = cents - (pennies * 1);
+
+        // Sum the number of quarters, dimes, nickels, and pennies used
+
+    int total_coins = quarters + dimes + nickels + pennies;
+
+
+    // Print that sum
+
+    printf(Total_coins: %i\n", total_coins);
 
 }
 
