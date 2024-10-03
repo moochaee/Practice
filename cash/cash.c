@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-
+int calculate_quarters(int cents);
 
 int main(void)
 {
@@ -12,7 +12,8 @@ int main(void)
     cents = get_int("Change owed ");
     }
     while (cents < 0);
-int calculate_quarters(int cents);
+    
+    printf("Quarters: %i\n", quarters);
 
 }
     int calculate_quarters(int cents)
@@ -26,7 +27,7 @@ int calculate_quarters(int cents);
     }
         return quarters;
 
-        printf("Quarters: %i\n", quarters);
+
 }
 
     // Subtract the value of those quarters from cents
