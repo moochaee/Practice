@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
-void print_row(int bricks);
+void print_row(int space, int bricks);
 
 int main(void)
 {
@@ -21,7 +21,7 @@ int main(void)
     }
 }
 
-void print_row(int bricks)
+void print_row(int space, int bricks)
 {
     for (int i = 0; i < bricks; i++)
     {
