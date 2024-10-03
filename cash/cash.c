@@ -25,10 +25,12 @@ int main(void)
         cents = cents -25;
     }
         return quarters;
+
+        printf("Quarters: %i\n", quarters);
 }
 
     // Subtract the value of those quarters from cents
-    
+
 
     // Calculate how many dimes you should give customer
     // Subtract the value of those dimes from remaining cents
