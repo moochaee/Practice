@@ -24,7 +24,7 @@ int main(void)
 void print_row(int space , int bricks)
 {
      //Print spaces
-    for (int i = 0; i < space; i++)
+    for (int i = -1; i < space; i++)
     {
         printf(" ");
     }
