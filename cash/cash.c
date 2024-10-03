@@ -13,6 +13,8 @@ int main(void)
     }
     while (cents < 0);
 
+     printf("Quarters: %i\n", quarters);
+
 
 }
     int calculate_quarters(int cents)
@@ -26,7 +28,7 @@ int main(void)
     }
         return quarters;
 
-        printf("Quarters: %i\n", quarters);
+
 }
 
     // Subtract the value of those quarters from cents
