@@ -16,8 +16,8 @@ int main(void)
     // Print a pyramid of that height
     for (int i = 0; i < n; i++)
     {
-        //Print row of bricks
-        print_row(i + 1);
+        //Print row of space & bricks
+        print_row(i + 2 , i + 1);
     }
 }
 
