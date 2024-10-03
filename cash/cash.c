@@ -10,8 +10,12 @@ int main(void)
     cents = get_int("Change owed ");
     }
     while (cents < 0);
+
+    int calculate_quarters(int cents)
 }
+
     // Calculate how many quarters you should give customer
+
     // Subtract the value of those quarters from cents
 
     // Calculate how many dimes you should give customer
