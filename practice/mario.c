@@ -17,6 +17,7 @@ int main(void)
 //print row of user defined #
 void print_row(int length)
 {
+    printf("length: %i\n", length); // Debugging line
     for (int i = 0; i < length; i++)
     {
         printf("#");
