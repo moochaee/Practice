@@ -8,10 +8,10 @@ int main(void)
     //Get height from user
     int height = get_int("Height ");
 
-    for (i = 0; i < height; i++)
-    {
-        print_row(i + 1);
-    }
+    for (int i = 0; i < height; i++)
+{
+    print_row(i + 1);
+}
 }
 //print row of user defined #
 void print_row(int length)
