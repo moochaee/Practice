@@ -4,5 +4,12 @@
 int main(void)
 
 {
+    //Get height from user
     int height = get_int("Height ");
+
+}
+
+print_row()
+{
+    
 }
