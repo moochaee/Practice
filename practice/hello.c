@@ -4,6 +4,9 @@
 int main(void)
 {
     string first_name = get_string("What is your first name? ");
-    string last_name = get_string("What is your last name name? ");
-    printf("hello %s %s\n", first_name, last_name);
+    int age = get_int("What is your age? ");
+    double phone_number = get_double("What is your phone number? ");
+
+
+    printf("%s %i %f\n", first_name, age, phone_number);
 }
