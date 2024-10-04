@@ -9,7 +9,7 @@ int main(void)
 
 }
 
-print_row()
+print_row(int length)
 {
-    
+
 }
