@@ -10,7 +10,7 @@ int main(void)
 
     for (int i = 0; i < height; i++)
     {
-    print_row(i + 1);
+    print_row(i);
     }
 }
 //print row of user defined #
