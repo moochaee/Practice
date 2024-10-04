@@ -10,6 +10,7 @@ int main(void)
 
     for (int i = 0; i < height; i++)
 {
+    printf("i: %i\n", i); // Debugging line
     print_row(i + 1);
 }
 }
