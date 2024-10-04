@@ -9,7 +9,11 @@ int main(void)
 
 }
 
-print_row(int length)
+void print_row(int length)
 {
-
+    for (int i = 0, i < length, i++)
+    {
+        printf("#");
+    }
+    printf("\n");
 }
