@@ -12,3 +12,4 @@ int main(void)
     printf("Age: %i\n", age);
     printf("Number: %s\n", phone_number);
 }
+ 
