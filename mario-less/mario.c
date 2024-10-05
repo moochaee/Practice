@@ -2,7 +2,6 @@
 #include <cs50.h>
 
 void print_row(int space, int bricks);
-void print_left(int left);
 
 int main(void)
 {
@@ -16,18 +15,15 @@ int main(void)
 
     // Print a pyramid of that height
     for (int i = 0; i < n; i++)
+    for (int j=2)
     {
         //Print row of space & bricks
-        print_row(n - i - 1 , i + 1);
+        print_row(n - i - 1 , i + 1, j , i + 1, n - i - 1);
     }
-    for (int i = 0; i < n; i++)
-    {
-        //Print row of space & bricks
-        print_left(i + 1);
-    }
+
 }
 
-void print_row(int space , int bricks)
+void print_row(int space , int bricks, int space, int bricks, int space)
 {
      //Print spaces
     for (int i = 0; i < space; i++)
@@ -36,16 +32,6 @@ void print_row(int space , int bricks)
     }
     //Print bricks
     for (int i = 0; i < bricks; i++)
-    {
-        printf("#");
-    }
-    printf("\n");
-}
-void print_left(int left)
-{
-
-    //Print bricks
-    for (int i = 0; i < left; i++)
     {
         printf("#");
     }
