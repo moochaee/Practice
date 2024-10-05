@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
-void print_row(int space, int bricks);
+void print_row(int space , int bricks, int spacer, int bricksr);
 
 int main(void)
 {
@@ -17,7 +17,7 @@ int main(void)
     for (int i = 0; i < n; i++)
     {
         //Print row of space & bricks
-        print_row(n - i - 1 , i + 1, );
+        print_row(n - i - 1 , i + 1, spacer, i + 1);
     }
 
 }
@@ -34,11 +34,11 @@ void print_row(int space , int bricks, int spacer, int bricksr)
     {
         printf("#");
     }
- //Print spacesr
+ //Print gap between pryamid
     {
         printf("  ");
     }
-    //Print bricksr
+    //Print bricks of right facing pyramid
     for (int i = 0; i < bricksr; i++)
     {
         printf("#");
