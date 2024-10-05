@@ -5,21 +5,21 @@ void print_row(int length);
 int main(void)
 
 {
-    printf("Program started\n"); // Debugging line
+    
     //Get height from user
     int height = get_int("Height ");
-    printf("Height entered: %i\n", height); // Debugging line
+
 
     for (int i = 0; i < height; i++)
 {
-    printf("i: %i\n", i); // Debugging line
+
     print_row(i + 1);
 }
 }
 //print row of user defined # test
 void print_row(int length)
 {
-    printf("length: %i\n", length); // Debugging line
+
     for (int i = 0; i < length; i++)
     {
         printf("#");
