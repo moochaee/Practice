@@ -7,6 +7,7 @@ int main(void)
 {
     //Get height from user
     int height = get_int("Height ");
+    printf("Height entered: %i\n", height); // Debugging line
 
     for (int i = 0; i < height; i++)
 {
