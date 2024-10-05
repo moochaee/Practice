@@ -15,15 +15,14 @@ int main(void)
 
     // Print a pyramid of that height
     for (int i = 0; i < n; i++)
-    for (int j=2)
     {
         //Print row of space & bricks
-        print_row(n - i - 1 , i + 1, j , i + 1, n - i - 1);
+        print_row(n - i - 1 , i + 1, i + 1, n - i - 1);
     }
 
 }
 
-void print_row(int space , int bricks, int space)
+void print_row(int space , int bricks, int bricks2, int space2)
 {
      //Print spaces
     for (int i = 0; i < space; i++)
@@ -31,6 +30,18 @@ void print_row(int space , int bricks, int space)
         printf(" ");
     }
     //Print bricks
+    for (int i = 0; i < bricks; i++)
+    {
+        printf("#");
+    }
+    printf("\n");
+
+    //Print spaces2
+    for (int i = 0; i < space; i++)
+    {
+        printf(" ");
+    }
+    //Print bricks2
     for (int i = 0; i < bricks; i++)
     {
         printf("#");
