@@ -35,9 +35,8 @@ void print_row(int space , int bricks, int spacer, int bricksr)
         printf("#");
     }
  //Print spacesr
-    for (int i = 0; i < spacer; i++)
     {
-        printf(" ");
+        printf("  ");
     }
     //Print bricksr
     for (int i = 0; i < bricksr; i++)
