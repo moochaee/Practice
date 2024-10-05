@@ -14,10 +14,11 @@ int main(void)
     while (n < 1 || n > 8);
 
     // Print a pyramid of that height
+    const int GAP = 2;
     for (int i = 0; i < n; i++)
     {
         //Print row of space & bricks
-        print_row(n - i - 1 , i + 1, spacer, i + 1);
+        print_row(n - i - 1 , i + 1, GAP, i + 1);
     }
 
 }
