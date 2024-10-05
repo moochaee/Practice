@@ -5,6 +5,7 @@ void print_row(int length);
 int main(void)
 
 {
+    printf("Program started\n"); // Debugging line
     //Get height from user
     int height = get_int("Height ");
     printf("Height entered: %i\n", height); // Debugging line
