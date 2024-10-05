@@ -1,9 +1,15 @@
 #include <cs50.h>
 #include <stdio.h>
 
+//Constant
+const int N = 3;
+
+// Prototype
+float average (int length, int array[]);
+
 int main(void)
 {
-    const int N = 3;
+    //Get scores
     int scores[N];
     for (int i = 0; i < N; i++)
     {
