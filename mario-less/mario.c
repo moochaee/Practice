@@ -17,12 +17,12 @@ int main(void)
     for (int i = 0; i < n; i++)
     {
         //Print row of space & bricks
-        print_row(n - i - 1 , i + 1);
+        print_row(n - i - 1 , i + 1, );
     }
 
 }
 
-void print_row(int space , int bricks)
+void print_row(int space , int bricks, int spacer, int bricksr)
 {
      //Print spaces
     for (int i = 0; i < space; i++)
@@ -34,5 +34,16 @@ void print_row(int space , int bricks)
     {
         printf("#");
     }
+ //Print spacesr
+    for (int i = 0; i < spacer; i++)
+    {
+        printf(" ");
+    }
+    //Print bricksr
+    for (int i = 0; i < bricksr; i++)
+    {
+        printf("#");
+    }
+
     printf("\n");
 }
