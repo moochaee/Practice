@@ -23,7 +23,7 @@ int main(void)
 
 }
 
-void print_row(int space , int bricks, int space, int bricks, int space)
+void print_row(int space , int bricks, int space)
 {
      //Print spaces
     for (int i = 0; i < space; i++)
