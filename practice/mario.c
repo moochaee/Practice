@@ -14,7 +14,7 @@ int main(void)
     print_row(i + 1);
 }
 }
-//print row of user defined #
+//print row of user defined # test
 void print_row(int length)
 {
     printf("length: %i\n", length); // Debugging line
