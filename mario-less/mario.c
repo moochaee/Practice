@@ -2,6 +2,7 @@
 #include <cs50.h>
 
 void print_row(int space, int bricks);
+void print_left(int left);
 
 int main(void)
 {
@@ -19,9 +20,10 @@ int main(void)
         //Print row of space & bricks
         print_row(n - i - 1 , i + 1);
     }
+    for (int i = 0; i < n; i++)
     {
         //Print row of space & bricks
-        print_row(n + 1 , i + 1);
+        print_left(i + 1);
     }
 }
 
@@ -34,6 +36,16 @@ void print_row(int space , int bricks)
     }
     //Print bricks
     for (int i = 0; i < bricks; i++)
+    {
+        printf("#");
+    }
+    printf("\n");
+}
+void print_left(int left)
+{
+
+    //Print bricks
+    for (int i = 0; i < left; i++)
     {
         printf("#");
     }
