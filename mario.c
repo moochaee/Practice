@@ -1,23 +1,28 @@
-#include <stdio.h>
 #include <cs50.h>
+#include <stdio.h>
 
-int main (void)
+void print_row(int length);
+int main(void)
+
 {
-        // Prompt user for positive integer
-    int n;
-    do
-    {
-        n = get_int("Size: ");
-    }
-    while (n < 1);
+    
+    //Get height from user
+    int height = get_int("Height ");
 
-    // Print an n-by-n grid of bricks
-    for (int i = 0; i < n; i++)
-    {
-        for(int j = 0; j < n; j++)
+
+    for (int i = 0; i < height; i++)
+{
+
+    print_row(i + 1);
+}
+}
+//print row of user defined # test
+void print_row(int length)
+{
+
+    for (int i = 0; i < length; i++)
     {
         printf("#");
     }
     printf("\n");
-}
 }
