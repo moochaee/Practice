@@ -19,6 +19,10 @@ int main(void)
         //Print row of space & bricks
         print_row(n - i - 1 , i + 1);
     }
+    {
+        //Print row of space & bricks
+        print_row(n + 1 , i + 1);
+    }
 }
 
 void print_row(int space , int bricks)
