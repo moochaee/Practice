@@ -17,14 +17,14 @@ int main(void)
     }
 
 
-    printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / (float) N);
+    printf("Average: %f\n", average(N, scores));
 
 }
 
 float average (int length, int array[])
 {
     //Calculate average
-    int sum = 0
+    int sum = 0;
     for (int i = 0; i < length; i++)
     {
         sum += array[i];
