@@ -17,6 +17,6 @@ int main(void)
         {
             printf("%c", s[i]);
         }
-        printf("\n");
     }
+    printf("\n");
 }
