@@ -8,6 +8,9 @@ int main(void)
     printf("After:  ");
     for (int i = 0, n = strlen(s); i < n; i++)
     {
+        //If lowercase
         if (s[i] >= 'a' && s[i] <= 'z')
+        {printf("%c", s[i]);
+        }
     }
 }
