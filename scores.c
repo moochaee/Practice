@@ -17,7 +17,7 @@ int main(void)
     }
 
 
-    printf("Average: %f\n", average(N, scores));
+    printf("Average: %.2f\n", average(N, scores));
 
 }
 
