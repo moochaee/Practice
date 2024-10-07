@@ -14,9 +14,9 @@ int main(void)
             printf("Not in alphabetical order.\n");
             return 0;
         }
-
     }
-    printf("%i ", phrase[i]);
+        printf("alphabetical order\n");
     }
         printf("\n");
+        
 
