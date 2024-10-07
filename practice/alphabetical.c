@@ -9,7 +9,7 @@ int main(void)
     for (int i = 0; i < length - 1; i++)
     {
     //Check if characters are NOT alphabetical
-        if (phrase[i] > phrase[i + 1]
+        if (phrase[i] > phrase[i + 1])
         {
             printf("Not in alphabetical order.\n");
             return 0;
@@ -18,5 +18,5 @@ int main(void)
         printf("alphabetical order\n");
     }
         printf("\n");
-        
+
 
