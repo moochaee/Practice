@@ -9,8 +9,8 @@ int main(void)
     for (int i = 0; i < length; i++)
     {
     //Check if characters are NOT alphabetical
-        if (phrase[i] <= phrase[i-1])
+        if (phrase[i] > phrase[i + 1]
     }        printf("%i ", phrase[i]);
     }
         printf("\n");
-       
+
