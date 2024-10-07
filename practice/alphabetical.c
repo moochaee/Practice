@@ -8,6 +8,6 @@ int main(void)
     int length = strlen(phrase);
     for (int i = 0; i < length; i++);
     {
-        printf("%c\n", phrase);
+        printf("%c\n", phrase[i]);
     }
 }
