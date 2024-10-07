@@ -9,6 +9,8 @@ int main(void)
     string word1 = get_string("Player 1: ");
     string word2 = get_string("Player 2: ");
 
+    //Convert to lower case
+
     // Compute the score of each word
 
     // Print the winner
