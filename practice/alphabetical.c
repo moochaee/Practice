@@ -16,6 +16,7 @@ int main(void)
         }
     }
         printf("alphabetical order\n");
+        return 0;
     }
         printf("\n");
 
