@@ -11,8 +11,6 @@ int main(void)
     {
 
         printf("%i ", phrase[i]);
-        else
-        print("Not in alphabetical order\n");
     }
     printf("\n");
 
