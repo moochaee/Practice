@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
+int main(int argc, string argv[])
 {
     string phrase = get_string("Enter a phrase: ");
     int length = strlen(phrase);
@@ -18,6 +18,6 @@ int main(void)
         printf("alphabetical order\n");
         return 0;
     }
-    
+
 
 
