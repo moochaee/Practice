@@ -14,6 +14,11 @@ int main(void)
     for(int i = 0; i < strlen; i++)
     toupper(word1[i]);
 
+    //Calculate the score
+int strlen = strlen(word1);
+    for(int i = 0; i < strlen; i++)
+    toupper(word1[i]);
+    sum = sum += word1[i];
 
 
     // Compute the score of each word
@@ -31,10 +36,3 @@ if(a > b){
     printf("Draw!");
 
 }
-
-//Calculate the score
-void calc(void)
-int strlen = strlen(word1);
-    for(int i = 0; i < strlen; i++)
-    toupper(word1[i]);
-    int final1 == word1[i] += word1[i]
