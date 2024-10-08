@@ -15,11 +15,11 @@ int main(void)
 
 
     // Print the winner
-    if(a > b)
+if(a > b){
     printf("Player 1 Wins");
-    else if(a < b)
+ } else if(a < b){
     printf("Player 2 Wins");
-    else
+}else {
     printf("Draw!");
 
 }
