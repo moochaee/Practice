@@ -32,3 +32,6 @@ if(a > b){
 
 }
 
+//Calculate the score
+int scrabble = strlen(playerword)
+for (int j = 0, j < srabble; j++)
