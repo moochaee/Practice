@@ -33,5 +33,6 @@ if(a > b){
 }
 
 //Calculate the score
-int scrabble = strlen(playerword)
+void calc(void)
+int scrabble = strlen(i)
 for (int j = 0, j < srabble; j++)
