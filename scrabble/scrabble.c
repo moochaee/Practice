@@ -34,5 +34,7 @@ if(a > b){
 
 //Calculate the score
 void calc(void)
-int scrabble = strlen(i)
-for (int j = 0, j < srabble; j++)
+int strlen = strlen(word1);
+    for(int i = 0; i < strlen; i++)
+    toupper(word1[i]);
+    int final1 == word1[i] += word1[i]
