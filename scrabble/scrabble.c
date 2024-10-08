@@ -3,36 +3,13 @@
 #include <stdio.h>
 #include <string.h>
 
+//Score for each letter of alphabet
+int SCORE[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+
+
 int main(void)
-{
+
     // Prompt the user for two words
     string word1 = get_string("Player 1: ");
     string word2 = get_string("Player 2: ");
-
-    //Convert each character to uppercase
-    int strlen = strlen(word1);
-    for(int i = 0; i < strlen; i++)
-    toupper(word1[i]);
-
-    //Calculate the score
-int strlen = strlen(word1);
-    for(int i = 0; i < strlen; i++)
-    toupper(word1[i]);
-    sum = sum += word1[i];
-
-
-    // Compute the score of each word
-    int array = 26;
-    int scores[array] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
-
-    scores[word1[i] - 'A'];
-
-    // Print the winner
-if(a > b){
-    printf("Player 1 Wins");
- } else if(a < b){
-    printf("Player 2 Wins");
-}else {
-    printf("Draw!");
-
-}
