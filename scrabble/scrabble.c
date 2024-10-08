@@ -25,4 +25,3 @@ if(a > b){
 }
 
 
-int calculate word1()
