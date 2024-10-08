@@ -27,16 +27,21 @@ int main(void)
 
 int scrabble_calc(string word)
 {
-int score = 0
+int score = 0;
 
 length = strlen(word)
 
 for (int i = 0; i < length; i++)
-{   if islower(word[i]);
+{
+    if islower(word[i])
+    {
     score += SCORE[word[i] - 'a'];
 }
-    elseif isupper(word[i]);
+    else if isupper(word[i])
     {score += SCORE[word[i] - 'A'];
+}
+}
+return score;
 }
 
 
