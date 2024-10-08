@@ -12,7 +12,7 @@ int main(void)
     //Convert each character to uppercase
     int strlen = strlen(word1);
     for(int i = 0; i < strlen; i++)
-    printf("%c\n", toupper(word1[i]));
+    toupper(word1[i]);
 
     // Compute the score of each word
     int array = 26;
