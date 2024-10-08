@@ -13,3 +13,33 @@ int main(void)
     // Prompt the user for two words
     string word1 = get_string("Player 1: ");
     string word2 = get_string("Player 2: ");
+
+
+
+
+
+
+
+
+
+
+//Calculate score
+
+int scrabble_calc(string word)
+{
+int score = 0
+
+length = strlen(word)
+
+for (int i = 0; i < length; i++)
+{   if islower(word[i]);
+    score += SCORE[word[i] - 'a'];
+}
+    elseif isupper(word[i]);
+    {score += SCORE[word[i] - 'A'];
+}
+
+
+
+
+
