@@ -38,5 +38,8 @@ int i = 0;
     string strlen = strlen(plaintext);
     for (int i = 0; i < strlen; i++)
     {
-        
+       if(isdigit(argv[1]))
     }
+        {
+            printf("%s\n", plaintext);
+        }
