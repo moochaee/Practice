@@ -11,10 +11,10 @@ int main(void)
 {
     // Prompt the user for some text
     string text = get_string("Text: ");
-}
+
 
     // Count the number of letters, words, and sentences in the text
- {
+ 
     int letters_calc = count_letters(text);
  }
     // Compute the Coleman-Liau index
