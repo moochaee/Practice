@@ -33,8 +33,7 @@ int main(int argc, string argv[])
 }
 
 
-bool only_digits(string s):
-int i = 0;
+    bool only_digits(string s):
     string strlen = strlen(plaintext);
     for (int i = 0; i < strlen; i++)
     {
