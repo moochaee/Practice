@@ -32,12 +32,13 @@ int count_letters(string text)
     for (int i = 0; i < letterlength; i++)
     {
         if (isalpha(text[i]))
+    }
     {
         letters += 1;
     }
 }
     return letters;
-}
+
 
 int count_words(string text)
 {
@@ -47,10 +48,11 @@ int count_words(string text)
     for (int i = 0; i < letterlength; i++)
     {
         if (text[i] == ' ');
+    }
     {
         words += 1;
     }
 }
     return words;
-}
+
 
