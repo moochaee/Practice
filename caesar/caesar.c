@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
-#include <stlib.h>
+#include <stdlib.h>
 
 bool only_digits(string s);
 
