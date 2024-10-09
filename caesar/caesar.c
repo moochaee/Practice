@@ -1,6 +1,6 @@
 
 
-
+ bool only_digits(string s);
 
 int main(int argc, string argv[])
 {
@@ -17,10 +17,7 @@ int main(int argc, string argv[])
         return 0;
         }
 
-    // Make sure every character in argv[1] is a digit
-    int i = 0;
-    string strlen = strlen(plaintext);
-    for (int i = 0; i < strlen; i++)
+
 
 
     // Convert argv[1] from a `string` to an `int`
@@ -32,7 +29,7 @@ int main(int argc, string argv[])
         // Rotate the character if it's a letter
 }
 
-
+ // Make sure every character in argv[1] is a digit
    bool only_digits(string s)
 {
     for (int i = 0; i < strlen(s); i++)
