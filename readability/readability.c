@@ -40,8 +40,8 @@ int count_letters(string text)
 
 int count_words(string text)
 {
-    // Return the number of letters in text
-    int words = 0;
+    // Return the number of words in text
+    int words = 1;
     int letterlength = strlen(text);
     for (int i = 0; i < letterlength; i++)
     {
