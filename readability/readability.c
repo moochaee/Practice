@@ -25,7 +25,8 @@ int count_letters(string text)
 
     int letterlength = strlen(text)
     for (int i = 0; i < letterlength; i++)
-    {int i += sentence[i];
+    {if 
+    }
 
     }
 }
