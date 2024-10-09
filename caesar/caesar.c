@@ -1,6 +1,9 @@
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stlib.h>
 
-
- bool only_digits(string s);
+bool only_digits(string s);
 
 int main(int argc, string argv[])
 {
@@ -9,6 +12,7 @@ int main(int argc, string argv[])
 
     if (argc == 2 && only_digits(argv[1]))
     {
+    atoi(argv[1])
     printf("%s\n", plaintext);
     return 0;
     }
@@ -26,7 +30,7 @@ int main(int argc, string argv[])
 
     // For each character in the plaintext:
 
-        // Rotate the character if it's a letter
+    // Rotate the character if it's a letter
 }
 
  // Make sure every character in argv[1] is a digit
