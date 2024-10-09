@@ -18,6 +18,10 @@ int main(int argc, string argv[])
         }
 
     // Make sure every character in argv[1] is a digit
+    int i = 0;
+    string strlen = strlen(plaintext);
+    for (int i = 0; i < strlen; i++)
+
 
     // Convert argv[1] from a `string` to an `int`
 
@@ -27,3 +31,12 @@ int main(int argc, string argv[])
 
         // Rotate the character if it's a letter
 }
+
+
+bool only_digits(string s):
+int i = 0;
+    string strlen = strlen(plaintext);
+    for (int i = 0; i < strlen; i++)
+    {
+        
+    }
