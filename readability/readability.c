@@ -25,5 +25,6 @@ int count_letters(string text)
     int letterlength = strlen(sentence)
     for (int i = 0; i < letterlength; i++)
     {int i += sentence[i];
+    int isalpha = 
     }
 }
