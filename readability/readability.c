@@ -32,7 +32,7 @@ int main(void)
 
     // Print the grade level
 
-    printf("Grade: %i\n", rounded_grade);
+    printf("Grade %i\n", rounded_grade);
 
 }
 
