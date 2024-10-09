@@ -22,8 +22,8 @@ int main(void)
 
     // Compute the Coleman-Liau index
 
-    int L = (letters_calc/words_calc) * 100;
-    int S = (sentences_calc/words_calc) * 100;
+    float L = ((float)letters_calc/words_calc) * 100;
+    float S = ((float)sentences_calc/words_calc) * 100;
 
     float grade = (0.0588*L)-(0.296*S)-15.8;
 
