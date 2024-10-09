@@ -55,3 +55,17 @@ int count_words(string text)
     return words;
 }
 
+int count_sentence(string text)
+{
+    // Return the number of words in text
+    int sentences = 0;
+    int letterlength = strlen(text);
+    for (int i = 0; i < letterlength; i++)
+    {
+        if (text[i] == ' ')
+        {
+             words += 1;
+        }
+    }
+    return words;
+}
