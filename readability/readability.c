@@ -14,7 +14,7 @@ int main(void)
 }
 
     // Count the number of letters, words, and sentences in the text
-    int letters = count_letters(text)
+    int letters_calc = count_letters(text)
 
     // Compute the Coleman-Liau index
 
