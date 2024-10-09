@@ -44,11 +44,11 @@ int count_words(string text)
     int letterlength = strlen(text);
     for (int i = 0; i < letterlength; i++)
     {
-        if (isalpha(text[i]))
+        if (text[i] == " ");
     {
-        letters += 1;
+        words += 1;
     }
 }
-    return letters;
+    return words;
 }
 
