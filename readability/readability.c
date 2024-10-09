@@ -6,6 +6,7 @@
 
 int count_letters(string text);
 int count_words(string text);
+int count_sentence(string text);
 
 int main(void)
 {
@@ -62,10 +63,10 @@ int count_sentence(string text)
     int letterlength = strlen(text);
     for (int i = 0; i < letterlength; i++)
     {
-        if (text[i] == ' ')
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
-             words += 1;
+             sentences += 1;
         }
     }
-    return words;
+    return sentences;
 }
