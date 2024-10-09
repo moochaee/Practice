@@ -31,9 +31,18 @@ int main(void)
 
 
     // Print the grade level
-
-    printf("Grade %i\n", rounded_grade);
-
+    if (rounded_grade ==-9)
+    {
+    printf("Before Grade 1\n");
+    }
+        else if (rounded_grade ==18)
+        {
+        printf("Grade 16+\n");
+        }
+        else
+        {
+            printf("Grade %i\n", rounded_grade);
+        }
 }
 
 
