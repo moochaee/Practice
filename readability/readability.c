@@ -26,7 +26,7 @@ int count_letters(string text)
     int letterlength = strlen(text)
     for (int i = 0; i < letterlength; i++)
     {if (isalpha(text[i]))
-    } letters += isalpha(text[i])
+    } letters += letters[word[i]];
 
     }
 }
