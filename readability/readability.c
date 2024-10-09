@@ -1,9 +1,8 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -14,7 +13,6 @@ int main(void)
     // Prompt the user for some text
     string text = get_string("Text: ");
 
-
     // Count the number of letters, words, and sentences in the text
 
     int letters_calc = count_letters(text);
@@ -23,28 +21,26 @@ int main(void)
 
     // Compute the Coleman-Liau index
 
-    float L = ((float)letters_calc/words_calc) * 100;
-    float S = ((float)sentences_calc/words_calc) * 100;
+    float L = ((float) letters_calc / words_calc) * 100;
+    float S = ((float) sentences_calc / words_calc) * 100;
 
-    float grade = (0.0588*L)-(0.296*S)-15.8;
+    float grade = (0.0588 * L) - (0.296 * S) - 15.8;
     int rounded_grade = round(grade);
 
-
     // Print the grade level
-    if (rounded_grade ==-9)
+    if (rounded_grade == -9)
     {
-    printf("Before Grade 1\n");
+        printf("Before Grade 1\n");
     }
-        else if (rounded_grade ==18)
-        {
+    else if (rounded_grade == 18)
+    {
         printf("Grade 16+\n");
-        }
-        else
-        {
-            printf("Grade %i\n", rounded_grade);
-        }
+    }
+    else
+    {
+        printf("Grade %i\n", rounded_grade);
+    }
 }
-
 
 int count_letters(string text)
 {
@@ -55,7 +51,7 @@ int count_letters(string text)
     {
         if (isalpha(text[i]))
         {
-        letters += 1;
+            letters += 1;
         }
     }
     return letters;
@@ -70,7 +66,7 @@ int count_words(string text)
     {
         if (text[i] == ' ')
         {
-             words += 1;
+            words += 1;
         }
     }
     return words;
@@ -85,7 +81,7 @@ int count_sentences(string text)
     {
         if (text[i] == '.' || text[i] == '!' || text[i] == '?')
         {
-             sentences += 1;
+            sentences += 1;
         }
     }
     return sentences;
