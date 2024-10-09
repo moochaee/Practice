@@ -27,7 +27,7 @@ int count_letters(string text)
 {
     // Return the number of letters in text
     int letters = 0;
-    int letterlength = strlen(letters1);
+    int letterlength = strlen(text);
     for (int i = 0; i < letterlength; i++)
     {
         if (isalpha(text[i]))
@@ -42,7 +42,7 @@ int count_words(string text)
 {
     // Return the number of words in text
     int words = 1;
-    int letterlength = strlen(words1);
+    int letterlength = strlen(text);
     for (int i = 0; i < letterlength; i++)
     {
         if (text[i] == ' ');
