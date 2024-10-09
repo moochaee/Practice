@@ -5,6 +5,7 @@
 #include <string.h>
 
 int count_letters(string text);
+int count_words(string text);
 
 int main(void)
 {
@@ -44,7 +45,7 @@ int count_words(string text)
     int letterlength = strlen(text);
     for (int i = 0; i < letterlength; i++)
     {
-        if (text[i] == " ");
+        if (text[i] == ' ');
     {
         words += 1;
     }
