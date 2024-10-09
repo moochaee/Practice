@@ -7,15 +7,15 @@ int main(int argc, string argv[])
     // Make sure program was run with just one command-line argument
     string plaintext = get_string("plaintext: ");
 
-    if (argc != 2)
+    if (argc == 2 && only_digits(argv[1]))
     {
-    printf("Usage: ./caesar key\n");
-    return 1;
+    printf("%s\n", plaintext);
+    return 0;
     }
-    else if(argc == 1)
-        {
-        return 0;
-        }
+    else
+    {
+       printf("Usage: ./caesar key\n");
+    }
 
 
 
