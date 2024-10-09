@@ -7,7 +7,7 @@
 int main(void)
 {
     // Prompt the user for some text
-    string text = get_string("Text: "/n);
+    string text = get_string("Text: ");
 }
 
     // Count the number of letters, words, and sentences in the text
@@ -22,8 +22,8 @@ int main(void)
 int count_letters(string text)
 {
     // Return the number of letters in text
-    letterlength = strlen(sentence)
-    for int i = 0; i < letterlength; i++
+    int letterlength = strlen(sentence)
+    for (int i = 0; i < letterlength; i++)
     {int i += sentence[i];
     }
 }
