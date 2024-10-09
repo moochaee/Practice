@@ -21,6 +21,8 @@ int main(void)
  }
     // Compute the Coleman-Liau index
 
+    int L = (letters_calc/)
+
     // Print the grade level
 
 
