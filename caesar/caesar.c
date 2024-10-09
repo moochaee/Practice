@@ -33,12 +33,14 @@ int main(int argc, string argv[])
 }
 
 
-    bool only_digits(string s):
-    string strlen = strlen(plaintext);
-    for (int i = 0; i < strlen; i++)
+   bool only_digits(string s)
+{
+    for (int i = 0; i < strlen(s); i++)
     {
-       if(isdigit(argv[1]))
-    }
+        if (!isdigit(s[i]))
         {
-            printf("%s\n", plaintext);
+            return false;
         }
+    }
+    return true;
+}
