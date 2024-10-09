@@ -22,4 +22,8 @@ int main(void)
 int count_letters(string text)
 {
     // Return the number of letters in text
+    letterlength = strlen(sentence)
+    for int i = 0; i < letterlength; i++
+    {int i += sentence[i];
+    }
 }
