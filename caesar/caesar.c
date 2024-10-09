@@ -1,6 +1,22 @@
+
+
+
+
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
+    string plaintext = get_string("plaintext: ");
+
+    if (argc != 2)
+    {
+    printf("Usage: ./caesar key\n");
+    return 1;
+    }
+    else
+        {
+        printf("%s\n", plaintext);
+        return 0;
+        }
 
     // Make sure every character in argv[1] is a digit
 
