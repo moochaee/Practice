@@ -12,8 +12,8 @@ int main(int argc, string argv[])
 
     if (argc == 2 && only_digits(argv[1]))
     {
-    atoi(argv[1])
-    printf("%s\n", plaintext);
+    int atoi(argv[1])
+    printf("%i\n", plaintext);
     return 0;
     }
     else
