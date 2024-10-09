@@ -3,6 +3,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -26,11 +27,12 @@ int main(void)
     float S = ((float)sentences_calc/words_calc) * 100;
 
     float grade = (0.0588*L)-(0.296*S)-15.8;
+    int rounded_grade = round(grade);
 
 
     // Print the grade level
 
-    printf("%.2f\n", grade);
+    printf("Grade: %i\n", rounded_grade);
 
 }
 
