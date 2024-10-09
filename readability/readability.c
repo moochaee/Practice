@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int count_letters(string text);
+
 int main(void)
 {
     // Prompt the user for some text
@@ -29,7 +31,7 @@ int count_letters(string text)
         if (isalpha(text[i]))
     {
         letters += 1;
-
     }
 }
+    return letters;
 }
