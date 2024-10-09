@@ -18,10 +18,13 @@ int main(void)
 
     int letters_calc = count_letters(text);
     int words_calc = count_words(text);
+    int sentences_calc = count_sentences(text);
  }
     // Compute the Coleman-Liau index
 
-    int L = (letters_calc/)
+    int L = (letters_calc/words_calc) * 100;
+    int S = (sentences_calc/words_calc) * 100
+
 
     // Print the grade level
 
