@@ -17,9 +17,10 @@ int main(int argc, string argv[])
     // Prompt user for plaintext
     string plaintext = get_string("plaintext: ");
     for (int i = 0; i < strlen(plaintext); i++)
-    printf("%c\n", plaintext[i]);
+    printf("%c", plaintext[i]);
     return 0;
     }
+    printf("\n");
     else
     {
        printf("Usage: ./caesar key\n");
