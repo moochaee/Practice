@@ -50,9 +50,11 @@ int main(int argc, string argv[])
     {
     c -= 'A' + int n + 'A';
     c % 26;
+    return int c
     }
     if (islower(c))
     {
     c -= 'a' + int n + 'a';
     c % 26;
+    return int c
     }
