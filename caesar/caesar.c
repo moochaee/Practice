@@ -63,6 +63,7 @@ int main(int argc, string argv[])
 
     char rotate(char c, int n)
     {
+    char c = 
     if(isupper(c))
     {
     char resultup = (((int) c - 'a' + n) % 26) + 'a';
