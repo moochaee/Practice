@@ -73,4 +73,6 @@ char rotate(char c, int n)
         char resultlo = (((int) c - 'a' + n) % 26) + 'a';
         return resultlo;
     }
+    else
+    return c
 }
