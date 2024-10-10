@@ -46,7 +46,7 @@ int main(int argc, string argv[])
     // Rotate the character if it's a letter
 
     char rotate(char c, int n)
-    if (isupper(c))
+    if(isupper(c))
     {
     c % 26 (+ 'a' - n + 'a');
     }
