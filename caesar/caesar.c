@@ -30,15 +30,12 @@ int main(int argc, string argv[])
     }
 }
 
+// For each character in the plaintext:
 
-    // For each character in the plaintext:
+// Rotate the character if it's a letter
 
-    // Rotate the character if it's a letter
-
-
-
- // Make sure every character in argv[1] is a digit
-   bool only_digits(string s)
+// Make sure every character in argv[1] is a digit
+bool only_digits(string s)
 {
     for (int i = 0; i < strlen(s); i++)
     {
@@ -50,8 +47,7 @@ int main(int argc, string argv[])
     return true;
 }
 
-    // Rotate the character if it's a letter
-
+// Rotate the character if it's a letter
 
 char rotate(char c, int n)
 {
@@ -66,5 +62,5 @@ char rotate(char c, int n)
         return resultlo;
     }
     else
-    return c;
+        return c;
 }
