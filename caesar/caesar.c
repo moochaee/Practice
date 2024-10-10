@@ -21,7 +21,9 @@ int main(int argc, string argv[])
         printf("%c", rotate(plaintext[i], key));
         }
         return 0;
-        printf("\n");
+    }
+    {
+    printf("\n");
     }
     else
     {
