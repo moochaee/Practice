@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     // Prompt user for plaintext
     string plaintext = get_string("plaintext: ");
     for (int i = 0; i < strlen(plaintext); i++)
-    printf("%c", plaintext[rotate(i , key)]);
+    printf("%c", rotate(plaintext[i], key);
     return 0;
     }
     printf("\n");
