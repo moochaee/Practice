@@ -61,18 +61,16 @@ int main(int argc, string argv[])
 
 
 
-    char rotate(char c, int n)
+char rotate(char c, int n)
+{
+    if (isupper(c))
     {
-    if(isupper(c))
+        char resultup = (((int) c - 'A' + n) % 26) + 'A';
+        return resultup;
+    }
+    else if (islower(c))
     {
-    char resultup = (((int) c - 'A' + n) % 26) + 'a';
-    return resultup;
+        char resultlo = (((int) c - 'a' + n) % 26) + 'a';
+        return resultlo;
     }
-    else if (islower(c)){
-    char resultlo = (((int) c - 'a' + n) % 26) + 'A';
-    return resultlo;
-    }
-    }
-
-
-
+}
