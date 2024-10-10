@@ -9,11 +9,11 @@ bool only_digits(string s);
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-    string plaintext = get_string("plaintext: ");
 
     if (argc == 2 && only_digits(argv[1]))
     {
     int key = atoi(argv[1]);
+    string plaintext = get_string("plaintext: ");
     printf("%s\n", plaintext);
     return 0;
     }
