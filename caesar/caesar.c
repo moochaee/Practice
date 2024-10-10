@@ -50,11 +50,30 @@ int main(int argc, string argv[])
     {
     c -= 'A' + int n + 'A';
     c % 26;
-    return int c
+    return char c
     }
     if (islower(c))
     {
     c -= 'a' + int n + 'a';
     c % 26;
-    return int c
+    return char c
+    }
+
+
+
+
+
+
+   char rotate(char c, int n)
+    if (isupper(c))
+    {
+    c -= 'A' + int n + 'A';
+    c % 26;
+    return char c
+    }
+    if (islower(c))
+    {
+    c -= 'a' + int n + 'a';
+    c % 26;
+    return char c
     }
