@@ -48,9 +48,9 @@ int main(int argc, string argv[])
     char rotate(char c, int n)
     if (isupper(c))
     {
-    int c = (char c - 'A' + int n + 'A');
+    int c = (c - 'A' + int n + 'A')%26;
     }
     if (islower(c))
     {
-    int c = (char c - 'a' + int n + 'a');
+    int c = (c - 'a' + int n + 'a')%26;
     }
