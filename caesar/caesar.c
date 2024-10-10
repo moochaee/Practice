@@ -9,10 +9,11 @@ bool only_digits(string s);
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-
     if (argc == 2 && only_digits(argv[1]))
+    // Convert argv[1] from a `string` to an `int`
     {
     int key = atoi(argv[1]);
+    // Prompt user for plaintext
     string plaintext = get_string("plaintext: ");
     printf("%s\n", plaintext);
     return 0;
@@ -23,11 +24,6 @@ int main(int argc, string argv[])
     }
 
 
-
-
-    // Convert argv[1] from a `string` to an `int`
-
-    // Prompt user for plaintext
 
     // For each character in the plaintext:
 
