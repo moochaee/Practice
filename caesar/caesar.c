@@ -49,15 +49,7 @@ int main(int argc, string argv[])
     if (isupper(c))
     {
     c -= 'A' + int n + 'A';
-    c % 26;
-    return char c
-    }
-    if (islower(c))
-    {
-    c -= 'a' + int n + 'a';
-    c % 26;
-    return char c
-    }
+  
 
 
 
