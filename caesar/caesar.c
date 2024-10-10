@@ -60,15 +60,25 @@ int main(int argc, string argv[])
 
 
 
-   char rotate(char c, int n)
-    if (isupper(c))
+
+    char rotate(char c, int n)
     {
-    ((c - 'a' + n) % 26) + 'a';
+    if(isupper(c))
+    {
+    ((int c - 'a' + int n) % 26) + 'a';
+    {
     return char c
     }
+    {
     if (islower(c))
+    }
     {
-    c -= 'a' + int n + 'a';
-    c % 26;
+    ((int c - 'A' + int n) % 26) + 'A';
+    }
+    {
     return char c
     }
+    }
+    }
+
+
