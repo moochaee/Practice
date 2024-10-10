@@ -46,4 +46,8 @@ int main(int argc, string argv[])
     // Rotate the character if it's a letter
 
     char rotate(char c, int n)
-    for (int i = 0, i < strlen())
+    for (int i = 0; i < strlen(plaintext); i++)
+    {
+        if(isupper(plaintext[0]))
+        
+    }
