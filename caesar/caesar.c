@@ -42,3 +42,7 @@ int main(int argc, string argv[])
     }
     return true;
 }
+
+    // Rotate the character if it's a letter
+
+    char rotate(char c, int n)
