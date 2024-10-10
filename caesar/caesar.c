@@ -16,9 +16,9 @@ int main(int argc, string argv[])
         int key = atoi(argv[1]);
         // Prompt user for plaintext
         string plaintext = get_string("plaintext: ");
+        printf("Ciphertext ");
         for (int i = 0; i < strlen(plaintext); i++)
         {
-            printf("Ciphertext");
             printf("%c", rotate(plaintext[i], key));
         }
         printf("\n");
