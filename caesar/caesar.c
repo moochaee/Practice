@@ -5,6 +5,7 @@
 #include <string.h>
 
 bool only_digits(string s);
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -45,21 +46,6 @@ int main(int argc, string argv[])
 
     // Rotate the character if it's a letter
 
-    char rotate(char c, int n)
-    {   int i = 0;
-        for (i = 0; i < strlen(rotate); i++)
-        if(isupper(c))
-        c -= 'a';
-        c += n;
-        c += 'a';
-        }
-
-
-
-
-
-
-
 
 char rotate(char c, int n)
 {
@@ -74,5 +60,5 @@ char rotate(char c, int n)
         return resultlo;
     }
     else
-    return c
+    return c;
 }
