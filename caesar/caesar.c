@@ -47,8 +47,13 @@ int main(int argc, string argv[])
 
     char rotate(char c, int n)
     {
+        for (i = 0; i < strlen(rotate); i++)
         if(isupper(c))
-        c % 26 + 'a' - n + 'a';
+        c % 26;
+        c -= 'a';
+        c += n;
+        c += 'a';
+        return char rotate
         }
 
 
