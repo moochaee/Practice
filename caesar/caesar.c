@@ -68,7 +68,7 @@ int main(int argc, string argv[])
     char resultup = (((int) c - 'A' + n) % 26) + 'a';
     return resultup;
     }
-    else if (islower(c['a'])){
+    else if (islower(c)){
     char resultlo = (((int) c - 'a' + n) % 26) + 'A';
     return resultlo;
     }
