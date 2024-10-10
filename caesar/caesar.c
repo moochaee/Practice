@@ -18,7 +18,8 @@ int main(int argc, string argv[])
         string plaintext = get_string("plaintext: ");
         for (int i = 0; i < strlen(plaintext); i++)
         {
-            printf("Ciphertext: %c", rotate(plaintext[i], key));
+            printf("Ciphertext");
+            printf("%c", rotate(plaintext[i], key));
         }
         printf("\n");
         return 0;
