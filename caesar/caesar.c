@@ -10,22 +10,24 @@ char rotate(char c, int n);
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-    if (argc == 2 && only_digits(argv[1]))
+        if (argc == 2 && only_digits(argv[1]))
     // Convert argv[1] from a `string` to an `int`
-    {
-    int key = atoi(argv[1]);
-    // Prompt user for plaintext
-    string plaintext = get_string("plaintext: ");
-    for (int i = 0; i < strlen(plaintext); i++)
-    printf("%c", rotate(plaintext[i], key));
-    return 0;
+        {
+        int key = atoi(argv[1]);
+        // Prompt user for plaintext
+        string plaintext = get_string("plaintext: ");
+        for (int i = 0; i < strlen(plaintext); i++)
+        {
+        printf("%c", rotate(plaintext[i], key));
+        return 0;
+        }
+        printf("\n");
     }
-    printf("\n");
-}
     else
     {
        printf("Usage: ./caesar key\n");
     }
+}
 
 
 
