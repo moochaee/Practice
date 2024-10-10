@@ -21,6 +21,7 @@ int main(int argc, string argv[])
     return 0;
     }
     printf("\n");
+}
     else
     {
        printf("Usage: ./caesar key\n");
@@ -31,7 +32,8 @@ int main(int argc, string argv[])
     // For each character in the plaintext:
 
     // Rotate the character if it's a letter
-}
+
+
 
  // Make sure every character in argv[1] is a digit
    bool only_digits(string s)
