@@ -16,7 +16,7 @@ int main(int argc, string argv[])
         int key = atoi(argv[1]);
         // Prompt user for plaintext
         string plaintext = get_string("plaintext: ");
-        printf("Ciphertext ");
+        printf("ciphertext: ");
         for (int i = 0; i < strlen(plaintext); i++)
         {
             printf("%c", rotate(plaintext[i], key));
@@ -27,6 +27,7 @@ int main(int argc, string argv[])
     else
     {
         printf("Usage: ./caesar key\n");
+        return 1;
     }
 }
 
