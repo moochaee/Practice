@@ -19,8 +19,8 @@ int main(int argc, string argv[])
         for (int i = 0; i < strlen(plaintext); i++)
         {
         printf("%c", rotate(plaintext[i], key));
-        return 0;
         }
+        return 0;
         printf("\n");
     }
     else
