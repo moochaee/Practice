@@ -65,12 +65,12 @@ int main(int argc, string argv[])
     {
     if(isupper(c))
     {
-    ((int c - 'a' + int n) % 26) + 'a';
-    return char c
+    ((int c - 'a' + n) % 26) + 'a';
+    return char c;
     }
     if (islower(c)){
-    ((int c - 'A' + int n) % 26) + 'A';
-    return char c
+    ((int c - 'A' + n) % 26) + 'A';
+    return char c;
     }
     }
 
