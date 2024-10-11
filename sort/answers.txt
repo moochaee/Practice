@@ -41,4 +41,17 @@ real    0m0.560s
 user    0m0.027s
 sys     0m0.250s
 
+5000 random sort 3
+real    0m0.044s
+user    0m0.020s
+sys     0m0.024s
 
+10000 random sort 3
+real    0m0.203s
+user    0m0.067s
+sys     0m0.059s
+
+50000 random sort 3
+real    0m2.331s
+user    0m1.826s
+sys     0m0.270s
