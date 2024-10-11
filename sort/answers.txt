@@ -2,11 +2,11 @@ sort1 uses: bubble sort
 
 How do you know?: much faster when sorting sorted.txt particularly the large sorted50000.txt
 
-sort2 uses: merge
+sort2 uses: merge sort
 
 How do you know?: easily the fastest
 
-sort3 uses: merge sort
+sort3 uses: selection sort
 
 How do you know?: roughly same time amounts for all files, as it has to do the same thing
 
