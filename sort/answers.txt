@@ -4,11 +4,11 @@ How do you know?: much faster when sorting sorted.txt particularly the large sor
 
 sort2 uses: selection sort
 
-How do you know?: TODO
+How do you know?: roughly same amounts for all files, as it has to do the same thing
 
-sort3 uses: TODO
+sort3 uses: merge
 
-How do you know?: TODO
+How do you know?: easily the fastest with a large sample size particularly
 
 
 5000 random sort 1
