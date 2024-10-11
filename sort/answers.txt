@@ -21,6 +21,11 @@ real    0m0.078s
 user    0m0.046s
 sys     0m0.023s
 
+5000 sorted sort 1
+real    0m0.049s
+user    0m0.006s
+sys     0m0.024s
+
 10000 random sort 1
 real    0m0.192s
 user    0m0.138s
@@ -29,6 +34,11 @@ sys     0m0.049s
 10000 reversed sort 1
 real    0m0.238s
 user    0m0.179s
+sys     0m0.049s
+
+10000 sorted sort 1
+real    0m0.056s
+user    0m0.004s
 sys     0m0.049s
 
 50000 random sort 1
@@ -42,50 +52,82 @@ real    0m4.897s
 user    0m4.420s
 sys     0m0.251s
 
+50000 sorted sort 1
+real    0m0.407s
+user    0m0.038s
+sys     0m0.204s
+
 5000 random sort 2
 real    0m0.040s
 user    0m0.004s
 sys     0m0.026s
 
+5000 reversed sort 2
+real    0m0.030s
+user    0m0.011s
+sys     0m0.017s
 
-
-
-
-
+5000 sorted sort 2
+real    0m0.029s
+user    0m0.000s
+sys     0m0.027s
 
 10000 random sort 2
 real    0m0.124s
 user    0m0.011s
 sys     0m0.051s
 
+10000 reversed sort 2
+real    0m0.074s
+user    0m0.007s
+sys     0m0.047s
 
-
-
-
-
+10000 sorted sort 2
+real    0m0.052s
+user    0m0.000s
+sys     0m0.050s
 
 50000 random sort 2
 real    0m0.560s
 user    0m0.027s
 sys     0m0.250s
 
+50000 reversed sort 2
+real    0m0.453s
+user    0m0.036s
+sys     0m0.245s
 
-
-
-
-
+50000 sorted sort 2
+real    0m0.475s
+user    0m0.046s
+sys     0m0.220s
 
 5000 random sort 3
 real    0m0.044s
 user    0m0.020s
 sys     0m0.024s
 
+5000 reversed sort 3
+real    0m0.046s
+user    0m0.019s
+sys     0m0.027s
+
 10000 random sort 3
 real    0m0.203s
 user    0m0.067s
 sys     0m0.059s
 
+10000 reversed sort 3
+real    0m0.192s
+user    0m0.094s
+sys     0m0.060s
+
 50000 random sort 3
 real    0m2.331s
 user    0m1.826s
 sys     0m0.270s
+
+50000 reversed sort 3
+real    0m2.418s
+user    0m1.989s
+sys     0m0.269s
