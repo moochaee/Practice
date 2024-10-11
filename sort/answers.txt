@@ -1,8 +1,8 @@
-sort1 uses: TODO
+sort1 uses: bubble sort
 
-How do you know?: TODO
+How do you know?: much faster when sorting sorted.txt particularly the large sorted50000.txt
 
-sort2 uses: TODO
+sort2 uses: selection sort
 
 How do you know?: TODO
 
