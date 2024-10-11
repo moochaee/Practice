@@ -9,3 +9,17 @@ How do you know?: TODO
 sort3 uses: TODO
 
 How do you know?: TODO
+
+
+5000 random sort 1
+real    0m0.089s
+user    0m0.037s
+sys     0m0.030s
+
+10000 random sort 1
+real    0m0.192s
+user    0m0.138s
+sys     0m0.049s
+
+50000 random sort 1
+
