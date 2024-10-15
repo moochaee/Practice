@@ -146,8 +146,7 @@ void tabulate(void)
     for(int i = 0; i < voter_count; i++)
     {
         for(int j = 0; j < candidate_count; j++)
-    }
-    {
+        {
         if(candidates[preferences[i][j]].eliminated == false)
         {
         candidates[preferences[i][j]].votes++;
@@ -156,6 +155,7 @@ void tabulate(void)
     }
     // TODO
     return;
+}
 }
 
 // Print the winner of the election, if there is one
