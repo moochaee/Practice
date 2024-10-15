@@ -147,8 +147,8 @@ void tabulate(void)
         for(int j = 0; j < preferences[j][0]; j++)
     }
     {
-        if(preferences[rank] > 0 || !candidates[i].eliminated)
-        preferences[rank]++;
+        if(preferences[rank] > 0 || candidates[i].eliminated == false)
+        preferences[i][j]++;
     }
     // TODO
     return;
