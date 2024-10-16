@@ -194,7 +194,7 @@ bool is_tie(int min)
 {
     for (int i = 0; int < candidate_count; i++)
     // TODO
-    return false;run
+    return false;
 }
 
 // Eliminate the candidate (or candidates) in last place
