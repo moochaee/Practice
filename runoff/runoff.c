@@ -195,9 +195,9 @@ bool is_tie(int min)
     int current_leader = 0
     for (int i = 0; int < candidate_count; i++)
     {
-        if(candidates[i].votes > current_leader && candidates[i].eliminated == false)
+        if(candidates[i].votes == candidates[i].votes && candidates[i].eliminated == false)
     }
-    return false;
+    return true;
 
 
 }
