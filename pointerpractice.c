@@ -2,9 +2,10 @@
 
 int main(void)
 {
-    int i = 8;
+    int calls = 8;
+    int *p = &calls;
 
     {
-    printf("%p\n", &i);
+    printf("%i\n", *p);
     }
 }
