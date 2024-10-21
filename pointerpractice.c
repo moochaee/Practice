@@ -3,8 +3,8 @@
 int main(void)
 {
     int i = 8;
-    int *j = &i;
+
     {
-    printf("%p\n", &j);
+    printf("%p\n", &i);
     }
 }
