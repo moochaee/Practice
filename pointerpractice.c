@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    int i = 8;
+    int *i = 8;
     {
     printf("%i\n", *i);
     }
