@@ -1,0 +1,24 @@
+user: pointerpractice.c:3:1: error: variable named 'main' with external linkage has undefined behavior [-Werror,-Wmain]
+    3 | int main void
+      | ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+
+assistant: It looks like there's a syntax error in your `main` function declaration. Can you check the syntax for defining the `main` function in C? What do you think might be missing or incorrect in your current declaration?
+
+user: pointerpractice.c:7:20: error: indirection requires pointer operand ('int' invalid)
+    7 |     printf("%i\n", *i);
+      |                    ^~
+
+assistant: It looks like you're trying to dereference an integer variable, but only pointers can be dereferenced. Can you check how you're declaring and using the variable `i`? What type should `i` be if you want to use the `*` operator on it?
+
+user: #include <stdio.h>
+
+int main(void)
+{
+    int i = 8;
+    {
+    printf("%i\n", *i);
+    }
+}
+
+assistant: It looks like you're trying to dereference `i`, but `i` is an integer, not a pointer. If you want to print the value of `i`, you don't need to use the `*` operator. How would you modify the `printf` statement to print `i` directly?
