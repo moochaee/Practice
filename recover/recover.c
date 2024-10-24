@@ -35,25 +35,16 @@ int main(int argc, char *argv[])
         {
         //Check for JPEG
         if (buffer[0] == 0xff || buffer[1] == 0xd8 || buffer[2] == 0xff || (buffer[3] < 0xe0 || buffer[3] > 0xef))
-        {
-        is_writing = true
+        {if (img != NULL) {
         fclose(img);
-        }
+    }
+    // Create new file
+    sprintf(filename, "%03i.jpg", file_number++);
+    img = fopen(filename, "w");
+    is_writing = true;
+}
 
-        {
-        // Create JPEGs from the data
-        char filename[FILENAME_SIZE];
-        sprintf(filename, "%03i.jpg", file_number);
-        file_number++;
-        // Additional logic to handle JPEG creation
-        img = fopen(filename, "w");
-        is_writing = true;
-        }
-
-        if (is_writing) {
-        fwrite(buffer, 1, BLOCK_SIZE, img);
-        }
-
-
-            }
+if (is_writing) {
+    fwrite(buffer, 1, BLOCK_SIZE, img);
+}
         }
