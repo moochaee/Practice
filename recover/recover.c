@@ -23,23 +23,31 @@ int main(int argc, char *argv[])
 
 
 
-    // While there's still data left to read from the memory card
+    // Declare
     uint8_t buffer[BLOCK_SIZE];
     int file_number = 0;
+    bool is_writing = false;
+    FILE *img = NULL;
 
+
+    // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
         {
         //Check for JPEG
         if (buffer[0] == 0xff || buffer[1] == 0xd8 || buffer[2] == 0xff || (buffer[3] < 0xe0 || buffer[3] > 0xef))
         {
-        bool is_writing = true
+        is_writing = true
         }
+
+        if(is_writing = true)
+        {
         // Create JPEGs from the data
         char filename[FILENAME_SIZE];
         sprintf(filename, "%03i.jpg", file_number);
         file_number++;
         // Additional logic to handle JPEG creation
         file *img = fopen(filename, "w");
+        }
         }
 
 
