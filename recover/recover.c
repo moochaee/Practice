@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#define BLOCK_SIZE 512
+
 int main(int argc, char *argv[])
 {
     // Accept a single command-line argument
@@ -19,8 +21,8 @@ int main(int argc, char *argv[])
     }
 
     // While there's still data left to read from the memory card
-    uint8_t buffer[512]
-    
+    uint8_t buffer[BLOCK_SIZE]
+
 
 
         // Create JPEGs from the data
