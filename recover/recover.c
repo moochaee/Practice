@@ -21,10 +21,7 @@ int main(int argc, char *argv[])
     return 1;
     }
 
-    //Check for JPEG
-    if (buffer[0] != 0xff || buffer[1] != 0xd8 || buffer[2] != 0xff || (buffer[3] < 0xe0 || buffer[3] > 0xef))
-    printf("Not a JPEG\n");
-    return 1;
+
 
     // While there's still data left to read from the memory card
     uint8_t buffer[BLOCK_SIZE];
@@ -32,6 +29,12 @@ int main(int argc, char *argv[])
 
     while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
         {
+        //Check for JPEG
+        if (buffer[0] != 0xff || buffer[1] != 0xd8 || buffer[2] != 0xff || (buffer[3] < 0xe0 || buffer[3] > 0xef))
+        {
+        printf("Not a JPEG\n");
+        return 1;
+        }
         // Create JPEGs from the data
         char filename[FILENAME_SIZE];
         sprintf(filename, "%03i.jpg", file_number);
