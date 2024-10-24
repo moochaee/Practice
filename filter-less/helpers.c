@@ -86,6 +86,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 copy[i-1][j]
             }
+            elseif()
         }
     }
 }
