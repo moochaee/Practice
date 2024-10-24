@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     uint8_t buffer[BLOCK_SIZE]
     uint8_t JPEG[JPEG_STRING]
-    while (fread(buffer, 1, 512, card) == 512)
+    while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
         // Create JPEGs from the data
         for (int file_number = 0; file_number < 1000; filenumber++)
