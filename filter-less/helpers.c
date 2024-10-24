@@ -87,7 +87,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int RGBGreen = RGBGreen = round(copy[i - 1][j-1].rgbtGreen + copy[i-1][j].rgbtGreen + copy[i-1][j+1].rgbtGreen + copy[i][j - 1].rgbtGreen + copy[i][j].rgbtGreen + copy[i][j + 1].rgbGreen + copy[i + 1][j - 1].rgbtGreen + copy[i + 1][j].rgbtGreen + copy[i + 1][j + 1].rgbtGreen) / 9.0;
             copy[i][j] = image[i][j];
             int RGBBlue = RGBBlue = round(copy[i - 1][j-1].rgbtBlue + copy[i-1][j].rgbtBlue + image[i-1][j+1].rgbtBlue + copy[i][j - 1].rgbtBlue + copy[i][j].rgbtBlue + copy[i][j + 1].rgbtBlue + copy[i + 1][j - 1].rgbtBlue + copy[i + 1][j].rgbtBlue + copy[i + 1][j + 1].rgbtBlue) / 9.0;
-            int blurpixel = round(RGBRed + RGBGreen = RGBBlue)/ 3.0
             copy[i][j] = image[i][j];
         }
     }
