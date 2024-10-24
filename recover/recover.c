@@ -3,6 +3,7 @@
 #include <stdint.h>
 
 #define BLOCK_SIZE 512
+#define JPEG_STRING 8
 
 int main(int argc, char *argv[])
 {
@@ -22,8 +23,10 @@ int main(int argc, char *argv[])
 
     // While there's still data left to read from the memory card
     uint8_t buffer[BLOCK_SIZE]
+    uint8_t JPEG[JPEG_STRING]
     while (fread(buffer, 1, 512, card) == 512)
     {
         // Create JPEGs from the data
         
+
 }
