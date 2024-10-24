@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     int file_number = 0;
     bool is_writing = false;
     FILE *img = NULL;
-    filename[FILENAME_SIZE];
+    char filename[FILENAME_SIZE];
 
 // While there's still data left to read from the memory card
 while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE) {
