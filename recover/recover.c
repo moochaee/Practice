@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     // Declare
     uint8_t buffer[BLOCK_SIZE];
     int file_number = 0;
-    bool is_writing = false;
+    bool !is_writing;
     FILE *img = NULL;
     char filename[FILENAME_SIZE];
 
@@ -42,13 +42,13 @@ while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE) {
         img = fopen(filename, "w");
         is_writing = true;
     }
-
-    if (is_writing) {
+}
+ if (is_writing) {
         fwrite(buffer, 1, BLOCK_SIZE, img);
     }
-    if(is_writing = false)
+    if(!is_writing)
     {
         fclose(img);
     }
-    fclose(card.raw);
+    fclose(card);
 }
