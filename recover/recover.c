@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
         {
         is_writing = true
         }
+        if (img != NULL) {
+        fclose(img);
 
         if(is_writing = true)
         {
