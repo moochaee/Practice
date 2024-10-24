@@ -140,6 +140,12 @@ for (int i = 0; i < height; i++)
 
             int RGBBlue = round(sumBlue / (float)countBlue);
 
+
+            //Copy back to image
+            image[i][j].rgbtRed = RGBred;
+            image[i][j].rgbtGreen = RGBGreen;
+            image[i][j].rgbtBlue = RGBBlue;
+
         }
     }
 }
