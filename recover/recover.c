@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     }
 
     //Check for JPEG
-    if(buffer[0] != 0xff && buffer[1] != 0xd8 && buffer[2] != 0xff)
+    if(buffer[0] != 0xff || buffer[1] != 0xd8 || buffer[2] != 0xff || )
     printf("Not a JPEG\n");
     return 1;
 
