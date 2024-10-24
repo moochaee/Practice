@@ -46,4 +46,9 @@ while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE) {
     if (is_writing) {
         fwrite(buffer, 1, BLOCK_SIZE, img);
     }
+    if(is_writing = false)
+    {
+        fclose(img);
+    }
+    fclose(card.raw);
 }
