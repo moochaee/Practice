@@ -90,6 +90,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 copy[i][j - 1];
             }
+            else if()
+
         }
     }
 }
