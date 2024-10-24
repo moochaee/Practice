@@ -82,6 +82,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         copy[i][j] = image[i][j];
         {
+            // Check surrounding pixels for Red
             int sumRed = 0, count = 0;
             if (i - 1 >= 0 && j - 1 >= 0) { sumRed += copy[i - 1][j - 1].rgbtRed; count++; }
             if (i - 1 >= 0) { sumRed += copy[i - 1][j].rgbtRed; count++; }
@@ -94,10 +95,28 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             if (i + 1 < height && j + 1 < width){ sumRed += copy[i + 1][j + 1].rgbtRed; count++; }
 
 
+            // Get average for red
 
-// Continue for other surrounding pixels...
+            int RGBred = round(sumRed / (float)count);
 
-int RGBred = round(sumRed / (float)count);
+            // Check surrounding pixels for Green
+            int sumGr = 0, count = 0;
+            if (i - 1 >= 0 && j - 1 >= 0) { sumGr += copy[i - 1][j - 1].rgbtGreen; count++; }
+            if (i - 1 >= 0) { sumGr += copy[i - 1][j].rgbtGreen; count++; }
+            if (i - 1 >= 0 && j + 1 < width) { sumGr += copy[i - 1][j+1].rgbtGreen; count++; }
+            if (j - 1 >= 0) { sumGr += copy[i][j - 1].rgbtGreen; count++; }
+            sumGr += copy[i][j].rgbtGreen; count++;
+            if (i >= 0 && j + 1 < width) { sumGr += copy[i][j + 1].rgbtGreen; count++; }
+            if (i + 1 < height && j - 1 >= 0) { sumGr += copy[i + 1][j - 1].rgbtGreen; count++; }
+            if (i + 1 < height) { sumGr += copy[i + 1][j].rgbtGreen; count++; }
+            if (i + 1 < height && j + 1 < width){ sumGr += copy[i + 1][j + 1].rgbtGreen; count++; }
+
+
+            // Get average for Green
+
+            int RGBGreen = round(sumGr / (float)count);
+
+            
 
         }
     }
