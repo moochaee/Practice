@@ -63,7 +63,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         {
             // Swap pixels
             int temp = *image[i][j]
-            
+            image[width - 1 - j] = image[j]
+            image [j] = image[i][j]
 
         }
     }
