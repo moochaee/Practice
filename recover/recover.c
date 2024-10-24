@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 #define BLOCK_SIZE 512
-#define JPEG_STRING 8
+#define FILENAME_SIZE 8 // e.g., "###.jpg" + null terminator
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, 512, card) == 512)
     {
         // Create JPEGs from the data
-        
+        for (int file_number = 0; file_number < 1000; filenumber++)
+        char filename[FILENAME_SIZE];
+        sprintf(filename, "%03i.jpg", file_number);
+
 
 }
