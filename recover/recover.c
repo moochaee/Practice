@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
         {
         //Check for JPEG
-        if (buffer[0] != 0xff || buffer[1] != 0xd8 || buffer[2] != 0xff || (buffer[3] < 0xe0 || buffer[3] > 0xef))
+        if (buffer[0] == 0xff || buffer[1] == 0xd8 || buffer[2] == 0xff || (buffer[3] < 0xe0 || buffer[3] > 0xef))
         {
         printf("Not a JPEG\n");
         return 1;
