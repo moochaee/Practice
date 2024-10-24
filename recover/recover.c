@@ -11,9 +11,11 @@ int main(int argc, char *argv[])
     }
     // Open the memory card
     FILE *card = fopen(argv[1], "r");
-    if(card == null)
+    if(card == NULL)
+    {
     printf("File cannot be opened\n");
     return 1;
+    }
 
     // While there's still data left to read from the memory card
 
