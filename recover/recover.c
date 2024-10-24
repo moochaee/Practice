@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
         if (img != NULL) {
         fclose(img);
 
-        if(is_writing = true)
         {
         // Create JPEGs from the data
         char filename[FILENAME_SIZE];
@@ -49,8 +48,12 @@ int main(int argc, char *argv[])
         file_number++;
         // Additional logic to handle JPEG creation
         file *img = fopen(filename, "w");
-        }
-        }
+        is_writing = true;
+}
+
+if (is_writing) {
+    fwrite(buffer, 1, BLOCK_SIZE, img);
+}
 
 
 }
