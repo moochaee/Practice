@@ -83,40 +83,55 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         copy[i][j] = image[i][j];
         {
             // Check surrounding pixels for Red
-            int sumRed = 0, count = 0;
-            if (i - 1 >= 0 && j - 1 >= 0) { sumRed += copy[i - 1][j - 1].rgbtRed; count++; }
-            if (i - 1 >= 0) { sumRed += copy[i - 1][j].rgbtRed; count++; }
-            if (i - 1 >= 0 && j + 1 < width) { sumRed += copy[i - 1][j+1].rgbtRed; count++; }
-            if (j - 1 >= 0) { sumRed += copy[i][j - 1].rgbtRed; count++; }
-            sumRed += copy[i][j].rgbtRed; count++;
-            if (i >= 0 && j + 1 < width) { sumRed += copy[i][j + 1].rgbtRed; count++; }
-            if (i + 1 < height && j - 1 >= 0) { sumRed += copy[i + 1][j - 1].rgbtRed; count++; }
-            if (i + 1 < height) { sumRed += copy[i + 1][j].rgbtRed; count++; }
-            if (i + 1 < height && j + 1 < width){ sumRed += copy[i + 1][j + 1].rgbtRed; count++; }
+            int sumRed = 0, countRed = 0;
+            if (i - 1 >= 0 && j - 1 >= 0) { sumRed += copy[i - 1][j - 1].rgbtRed; countRed++; }
+            if (i - 1 >= 0) { sumRed += copy[i - 1][j].rgbtRed; countRed++; }
+            if (i - 1 >= 0 && j + 1 < width) { sumRed += copy[i - 1][j+1].rgbtRed; countRed++; }
+            if (j - 1 >= 0) { sumRed += copy[i][j - 1].rgbtRed; countRed++; }
+            sumRed += copy[i][j].rgbtRed; countRed++;
+            if (i >= 0 && j + 1 < width) { sumRed += copy[i][j + 1].rgbtRed; countRed++; }
+            if (i + 1 < height && j - 1 >= 0) { sumRed += copy[i + 1][j - 1].rgbtRed; countRed++; }
+            if (i + 1 < height) { sumRed += copy[i + 1][j].rgbtRed; countRed++; }
+            if (i + 1 < height && j + 1 < width){ sumRed += copy[i + 1][j + 1].rgbtRed; countRed++; }
 
 
             // Get average for red
 
-            int RGBred = round(sumRed / (float)count);
+            int RGBred = round(sumRed / (float)countRed);
 
             // Check surrounding pixels for Green
-            int sumGr = 0, count = 0;
-            if (i - 1 >= 0 && j - 1 >= 0) { sumGr += copy[i - 1][j - 1].rgbtGreen; count++; }
-            if (i - 1 >= 0) { sumGr += copy[i - 1][j].rgbtGreen; count++; }
-            if (i - 1 >= 0 && j + 1 < width) { sumGr += copy[i - 1][j+1].rgbtGreen; count++; }
-            if (j - 1 >= 0) { sumGr += copy[i][j - 1].rgbtGreen; count++; }
-            sumGr += copy[i][j].rgbtGreen; count++;
-            if (i >= 0 && j + 1 < width) { sumGr += copy[i][j + 1].rgbtGreen; count++; }
-            if (i + 1 < height && j - 1 >= 0) { sumGr += copy[i + 1][j - 1].rgbtGreen; count++; }
-            if (i + 1 < height) { sumGr += copy[i + 1][j].rgbtGreen; count++; }
-            if (i + 1 < height && j + 1 < width){ sumGr += copy[i + 1][j + 1].rgbtGreen; count++; }
+            int sumGr = 0, countGreen = 0;
+            if (i - 1 >= 0 && j - 1 >= 0) { sumGr += copy[i - 1][j - 1].rgbtGreen; countGreen++; }
+            if (i - 1 >= 0) { sumGr += copy[i - 1][j].rgbtGreen; countGreen++; }
+            if (i - 1 >= 0 && j + 1 < width) { sumGr += copy[i - 1][j+1].rgbtGreen; countGreen++; }
+            if (j - 1 >= 0) { sumGr += copy[i][j - 1].rgbtGreen; countGreen++; }
+            sumGr += copy[i][j].rgbtGreen; countGreen++;
+            if (i >= 0 && j + 1 < width) { sumGr += copy[i][j + 1].rgbtGreen; countGreen++; }
+            if (i + 1 < height && j - 1 >= 0) { sumGr += copy[i + 1][j - 1].rgbtGreen; countGreen++; }
+            if (i + 1 < height) { sumGr += copy[i + 1][j].rgbtGreen; countGreen++; }
+            if (i + 1 < height && j + 1 < width){ sumGr += copy[i + 1][j + 1].rgbtGreen; countGreen++; }
 
 
             // Get average for Green
 
-            int RGBGreen = round(sumGr / (float)count);
+            int RGBGreen = round(sumGr / (float)countGreen);
 
-            
+            // Check surrounding pixels for Blue
+            int sumBlue = 0, countBlue = 0;
+            if (i - 1 >= 0 && j - 1 >= 0) { sumBlue += copy[i - 1][j - 1].rgbtBlue; countBlue++; }
+            if (i - 1 >= 0) { sumBlue += copy[i - 1][j].rgbtBlue; countBlue++; }
+            if (i - 1 >= 0 && j + 1 < width) { sumBlue += copy[i - 1][j+1].rgbtBlue; countBlue++; }
+            if (j - 1 >= 0) { sumBlue += copy[i][j - 1].rgbtBlue; countBlue++; }
+            sumBlue += copy[i][j].rgbtBlue; countBlue++;
+            if (i >= 0 && j + 1 < width) { sumBlue += copy[i][j + 1].rgbtBlue; countBlue++; }
+            if (i + 1 < height && j - 1 >= 0) { sumBlue += copy[i + 1][j - 1].rgbtBlue; countBlue++; }
+            if (i + 1 < height) { sumBlue += copy[i + 1][j].rgbtBlue; countBlue++; }
+            if (i + 1 < height && j + 1 < width){ sumBlue += copy[i + 1][j + 1].rgbtBlue; countBlue++; }
+
+
+            // Get average for Blue
+
+            int RGBBlue = round(sumBlue / (float)countBlue);
 
         }
     }
