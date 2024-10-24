@@ -23,13 +23,16 @@ int main(int argc, char *argv[])
 
     // While there's still data left to read from the memory card
     uint8_t buffer[BLOCK_SIZE]
-    uint8_t JPEG[JPEG_STRING]
+    int file_number = 0;
+
     while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
-    {
+        {
         // Create JPEGs from the data
-        for (int file_number = 0; file_number < 1000; filenumber++)
-        char filename[FILENAME_SIZE];
+        filename[FILENAME_SIZE];
         sprintf(filename, "%03i.jpg", file_number);
+        file_number++;
+        // Additional logic to handle JPEG creation
+        }
 
 
 }
