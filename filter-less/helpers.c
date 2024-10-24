@@ -81,7 +81,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            while(i = )
+            while(i < height && j < width)
+            int blur = ([i - 1][j-1] + [i][j])
             copy[i][j] = image[i][j];
         }
     }
