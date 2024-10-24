@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -18,6 +19,9 @@ int main(int argc, char *argv[])
     }
 
     // While there's still data left to read from the memory card
+    uint8_t buffer[512]
+    
+
 
         // Create JPEGs from the data
 }
