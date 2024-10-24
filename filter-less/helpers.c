@@ -85,7 +85,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int sumRed = 0, count = 0;
             if (i - 1 >= 0 && j - 1 >= 0) { sumRed += copy[i - 1][j - 1].rgbtRed; count++; }
             if (i - 1 >= 0) { sumRed += copy[i - 1][j].rgbtRed; count++; }
-            if (i - 1 >= 0) { sumRed += copy[i - 1][j].rgbtRed; count++; }
+            if (i - 1 >= 0 && j + 1 < width) { sumRed += copy[i - 1][j+1].rgbtRed; count++; }
 // Continue for other surrounding pixels...
 
 int RGBred = round(sumRed / (float)count);
