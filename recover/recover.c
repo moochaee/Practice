@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
         sprintf(filename, "%03i.jpg", file_number);
         file_number++;
         // Additional logic to handle JPEG creation
+        file *img = fopen(filename, "w");
         }
 
 
