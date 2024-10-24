@@ -21,6 +21,11 @@ int main(int argc, char *argv[])
     return 1;
     }
 
+    //Check for JPEG
+    if(buffer[0] != 0xff && buffer[1] != 0xd8 && buffer[2] != 0xff)
+    printf("Not a JPEG\n");
+    return 1;
+
     // While there's still data left to read from the memory card
     uint8_t buffer[BLOCK_SIZE];
     int file_number = 0;
