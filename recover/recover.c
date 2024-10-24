@@ -47,13 +47,14 @@ int main(int argc, char *argv[])
         sprintf(filename, "%03i.jpg", file_number);
         file_number++;
         // Additional logic to handle JPEG creation
-        file *img = fopen(filename, "w");
+        img = fopen(filename, "w");
         is_writing = true;
-}
+        }
 
-if (is_writing) {
-    fwrite(buffer, 1, BLOCK_SIZE, img);
-}
+        if (is_writing) {
+        fwrite(buffer, 1, BLOCK_SIZE, img);
+        }
 
 
-}
+            }
+        }
