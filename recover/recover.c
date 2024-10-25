@@ -45,11 +45,13 @@ while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE) {
     if (is_writing) {
         fwrite(buffer, 1, BLOCK_SIZE, img);
     }
-    if(!is_writing)
-    {
-        fclose(img);
 }
 
-    }
-    fclose(card);
+// Close the last image file if it's open
+if (img != NULL) {
+    fclose(img);
+}
+
+// Close the memory card file
+fclose(card);
 }
