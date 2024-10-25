@@ -16,7 +16,8 @@ int main(void)
     int *tmp = malloc(4 * sizeof(int));
     if (*tmp == NULL)
     {
-    return 1;
+        free(list);
+        return 1;
     }
 
     for (int i = 0; i < 3; i++)
