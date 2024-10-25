@@ -1,7 +1,7 @@
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
-#include <stdbool.h>
 
 #define BLOCK_SIZE 512
 #define FILENAME_SIZE 8 // e.g., "###.jpg" + null terminator
@@ -16,13 +16,11 @@ int main(int argc, char *argv[])
     }
     // Open the memory card
     FILE *card = fopen(argv[1], "r");
-    if(card == NULL)
+    if (card == NULL)
     {
-    printf("File cannot be opened\n");
-    return 1;
+        printf("File cannot be opened\n");
+        return 1;
     }
-
-
 
     // Declare
     uint8_t buffer[BLOCK_SIZE];
@@ -31,28 +29,34 @@ int main(int argc, char *argv[])
     FILE *img = NULL;
     char filename[FILENAME_SIZE];
 
-// While there's still data left to read from the memory card
-while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE) {
-    // Check for JPEG
-    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
-        if (img != NULL) {
-            fclose(img);
+    // While there's still data left to read from the memory card
+    while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
+    {
+        // Check for JPEG
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff &&
+            (buffer[3] & 0xf0) == 0xe0)
+        {
+            if (img != NULL)
+            {
+                fclose(img);
+            }
+            // Create new file
+            sprintf(filename, "%03i.jpg", file_number++);
+            img = fopen(filename, "w");
+            is_writing = true;
         }
-        // Create new file
-        sprintf(filename, "%03i.jpg", file_number++);
-        img = fopen(filename, "w");
-        is_writing = true;
+        if (is_writing)
+        {
+            fwrite(buffer, 1, BLOCK_SIZE, img);
+        }
     }
-    if (is_writing) {
-        fwrite(buffer, 1, BLOCK_SIZE, img);
+
+    // Close the last image file if it's open
+    if (img != NULL)
+    {
+        fclose(img);
     }
-}
 
-// Close the last image file if it's open
-if (img != NULL) {
-    fclose(img);
-}
-
-// Close the memory card file
-fclose(card);
+    // Close the memory card file
+    fclose(card);
 }
