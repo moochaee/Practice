@@ -34,6 +34,9 @@ int main(void)
         n->phrase = phrase;
         n->next = NULL;
 
+        n->next = list;
+        list = n;
+
 
         // Visualize list after adding a node.
         visualizer(list);
