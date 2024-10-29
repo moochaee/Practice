@@ -60,9 +60,12 @@ bool unload(node *list)
 
     while(ptr != NULL)
     {
-        free(list)
+        ptr = list->next;
+        free(list);
+        list = ptr;
     }
-    return false;
+    
+    return true;
 }
 
 void visualizer(node *list)
