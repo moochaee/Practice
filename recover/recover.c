@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define BLOCK_SIZE 512
+#define BLOCK_SIZE = 512
 #define FILENAME_SIZE 8 // e.g., "###.jpg" + null terminator
 
 int main(int argc, char *argv[])
