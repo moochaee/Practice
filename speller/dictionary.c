@@ -31,7 +31,12 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    int word_total = 0;
+for (int i = 0; word[i] != '\0'; i++) {
+    word_total += word[i];
+}
+int hash = word_total % 101;
+return hash;
 }
 
 // Declare
