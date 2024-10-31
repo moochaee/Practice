@@ -57,8 +57,8 @@ bool load(const char *dictionary)
         {
         node *n = malloc(sizeof(node));
         strcpy(n->word, buffer);
-        n->next = table[N];
-        table[N] = n;
+        n->next = table[hash];
+        table[hash] = n;
         }
         is_loaded = true
         return true;
