@@ -44,16 +44,18 @@ uint8_t buffer[BLOCK_SIZE]
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 
-char buffer[LENGTH + 1];
 
-{
-    // TODO
+
+{   //Create buffer of max word length +1 for '/0'
+    char buffer[LENGTH + 1];
+
+    //Check to see if file can open and be scanned
     if(FILE *source = fopen(dictionary, "r"))
     {
         fscanf(source, "%s", buffer);
         return true;
     }
-
+    // return false if file can't be opened
     else{
         printf("File cannot be opened\n");
         return false;
