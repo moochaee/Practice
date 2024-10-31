@@ -69,24 +69,22 @@ bool load(const char *dictionary)
 // Global variable to track if dictionary is loaded
 bool is_loaded = false;
 
-// In load function:
-if (dictionary is successfully loaded) {
-    is_loaded = true;
-}
-
-// In size function:
 if (is_loaded) {
 unsigned int size(void)
 {
-    int word_total = 0;
-    while (fscanf(source, "%s", buffer) != EOF)
+    if (is_loaded)
     {
-    word_total++;
+        int word_total = 0;
+        while (fscanf(source, "%s", buffer) != EOF)
+        {
+            word_total++;
+        }
+        return word_total;
     }
-    return word_total;
-}
-if is_loaded = false;
-return 0;
+    else
+    {
+        return 0;
+    }
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
