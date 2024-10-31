@@ -8,6 +8,9 @@
 
 #include "dictionary.h"
 
+// Global variable to track if dictionary is loaded
+bool is_loaded = false;
+
 //Create File
 FILE *source;
 //Create buffer of max word length +1 for '/0'
@@ -82,7 +85,6 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 
 // Global variable to track if dictionary is loaded
-bool is_loaded = false;
 unsigned int size(void)
 {
     if (is_loaded)
