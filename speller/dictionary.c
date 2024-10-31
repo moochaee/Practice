@@ -53,7 +53,10 @@ bool load(const char *dictionary)
     //Check to see if file can open and be scanned
     if(FILE *source = fopen(dictionary, "r"))
     {
-        fscanf(source, "%s", buffer);
+        while (fscanf(source, "%s", buffer) != EOF)
+        {
+        
+        }
         is_loaded = true
         return true;
     }
