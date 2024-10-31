@@ -54,6 +54,7 @@ bool load(const char *dictionary)
     if(FILE *source = fopen(dictionary, "r"))
     {
         fscanf(source, "%s", buffer);
+        isloaded ==true
         return true;
     }
     // return false if file can't be opened
