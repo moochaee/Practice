@@ -50,14 +50,12 @@ return hash;
 
 
 // Loads dictionary into memory, returning true if successful, else false
+
 bool load(const char *dictionary)
-
-
 
 {
 
     //Check to see if file can open and be scanned
-    FILE *source = fopen(dictionary, "r");
     if(source)
     {
         while (fscanf(source, "%s", buffer) != EOF)
