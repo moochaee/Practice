@@ -30,9 +30,9 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int word_total = 0;
+    int word_char_total = 0;
 for (int i = 0; word[i] != '\0'; i++) {
-    word_total += word[i];
+    word_char_total += word[i];
 }
 int hash = word_total % 101;
 return hash;
