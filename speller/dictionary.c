@@ -68,7 +68,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     int word_total = 0;
-    if(load = true)
+    if(load)
     while (fscanf(source, "%s", buffer) != EOF)
     {
     word_total++;
