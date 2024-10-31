@@ -14,7 +14,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
+const unsigned int N = 101;
 
 // Hash table
 node *table[N];
@@ -47,7 +47,7 @@ bool load(const char *dictionary)
     // TODO
     if(FILE *source = fopen(dictionary, "r"))
     {
-        
+
         return true;
     }
 
