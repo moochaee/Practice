@@ -44,7 +44,7 @@ unsigned int hash(const char *word)
 for (int i = 0; word[i] != '\0'; i++) {
     word_char_total += word[i];
 }
-int hash = word_count % 101;
+int hash = word_char_total % 101;
 return hash;
 }
 
@@ -54,8 +54,7 @@ bool load(const char *dictionary)
 
 
 
-{   //Create buffer of max word length +1 for '/0'
-    char buffer[LENGTH + 1];
+{  
 
     //Check to see if file can open and be scanned
     if(FILE *source = fopen(dictionary, "r"))
