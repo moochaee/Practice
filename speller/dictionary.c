@@ -45,11 +45,11 @@ uint8_t buffer[BLOCK_SIZE]
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *source = fopen(dictionary, "r");
-    while(fread(buffer, 1, 1, load)
+    if(FILE *source = fopen(dictionary, "r"))
     {
         return true;
     }
+
     else{
         printf("File cannot be opened\n")
         return false:
