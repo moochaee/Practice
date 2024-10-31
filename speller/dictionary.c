@@ -40,7 +40,7 @@ bool check(const char *word)
     node *cursor = table[index];
     while (cursor != NULL)
 {
-    if (strcasecmp(islower(cursor->word), islower(word)) == 0)
+    if (strcasecmp(cursor->word, word) == 0)
     {
         return true;
     }
