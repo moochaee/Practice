@@ -2,9 +2,9 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <strings.h>
 
 #include "dictionary.h"
@@ -12,12 +12,12 @@
 // Global variable to track if dictionary is loaded
 bool is_loaded = false;
 
-//Create File
+// Create File
 FILE *source;
-//Create buffer of max word length +1 for '/0'
+// Create buffer of max word length +1 for '/0'
 char buffer[LENGTH + 1];
 
-//Global variable for word count
+// Global variable for word count
 int word_count = 0;
 
 // Represents a node in a hash table
@@ -45,28 +45,27 @@ bool check(const char *word)
     }
     copy[strlen(word)] = '\0';
     while (cursor != NULL)
-{
-    if (strcasecmp(cursor->word, copy) == 0)
     {
-        return true;
+        if (strcasecmp(cursor->word, copy) == 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
     }
-    cursor = cursor->next;
-}
-return false;
+    return false;
 }
 
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    int word_char_total = 0;
-for (int i = 0; word[i] != '\0'; i++) {
-    word_char_total += word[i];
+    unsigned long hash = 5381;
+    int c;
+    while ((c = *word++))
+    {
+        hash = ((hash << 5) + hash) + tolower(c); // hash * 33 + c
+    }
+    return hash % N;
 }
-int hash = word_char_total % 101;
-return hash;
-}
-
 
 // Loads dictionary into memory, returning true if successful, else false
 
@@ -74,29 +73,29 @@ bool load(const char *dictionary)
 
 {
 
-    //Check to see if file can open and be scanned
+    // Check to see if file can open and be scanned
     source = fopen(dictionary, "r");
-    if(source)
+    if (source)
     {
         while (fscanf(source, "%s", buffer) != EOF)
         {
-        node *n = malloc(sizeof(node));
-        strcpy(n->word, buffer);
-        int index = hash(buffer);
-        n->next = table[index];
-        table[index] = n;
-        word_count++;
+            node *n = malloc(sizeof(node));
+            strcpy(n->word, buffer);
+            int index = hash(buffer);
+            n->next = table[index];
+            table[index] = n;
+            word_count++;
         }
         is_loaded = true;
         fclose(source);
         return true;
     }
     // return false if file can't be opened
-    else{
+    else
+    {
         printf("File cannot be opened\n");
         return false;
     }
-
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -119,16 +118,14 @@ bool unload(void)
 {
 
     node *unload_cursor;
-    for(int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
-    while(table[i] != NULL)
-    {
-        unload_cursor = table[i];
-        table[i] = table[i]->next;
-        free(unload_cursor);
-    }
+        while (table[i] != NULL)
+        {
+            unload_cursor = table[i];
+            table[i] = table[i]->next;
+            free(unload_cursor);
+        }
     }
     return true;
-
-
 }
