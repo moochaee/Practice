@@ -7,7 +7,10 @@
 //Create File
 FILE *source;
 //Create buffer of max word length +1 for '/0'
-    char buffer[LENGTH + 1];
+char buffer[LENGTH + 1];
+
+//Global variable for word count
+int word_count = 0;
 
 // Represents a node in a hash table
 typedef struct node
@@ -60,6 +63,7 @@ bool load(const char *dictionary)
         int index = hash(buffer);
         n->next = table[index];
         table[index] = n;
+        word_count++
         }
         is_loaded = true
         fclose(source);
