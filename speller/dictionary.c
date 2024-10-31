@@ -43,11 +43,14 @@ uint8_t buffer[BLOCK_SIZE]
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
+
+char buffer[LENGTH + 1];
+
 {
     // TODO
     if(FILE *source = fopen(dictionary, "r"))
     {
-        fscanf(load, "%s", buffer);
+        fscanf(source, "%s", buffer);
         return true;
     }
 
