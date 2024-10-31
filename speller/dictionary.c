@@ -69,7 +69,7 @@ bool load(const char *dictionary)
         table[index] = n;
         word_count++;
         }
-        is_loaded = true
+        is_loaded = true;
         fclose(source);
         return true;
     }
