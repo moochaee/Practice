@@ -35,7 +35,9 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    for(int i = 0; i < )
+    node *cursor = malloc(sizeof(node));
+    for (int i = 0; i < word_count; i++);
+    if(s)
     // TODO
     return false;
 }
