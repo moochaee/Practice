@@ -35,10 +35,10 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    table
-    node *cursor = malloc(sizeof(node));
-    for (int i = 0; i < word_count; i++);
-    if(strcasecmp(table[hash]->word, cursor->word) = 0)
+    table[hash];
+    *cursor = table[hash]
+    while(cursor->next != NULL)
+    if(strcasecomp(dictionary.txt, cursor->word)
     return true;
     else
     cursor = cursor->next;
