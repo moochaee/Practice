@@ -85,6 +85,7 @@ unsigned int size(void)
     }
     return word_total;
 }
+}
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
