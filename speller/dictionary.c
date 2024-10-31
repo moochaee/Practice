@@ -37,7 +37,7 @@ bool check(const char *word)
 {
     node *cursor = malloc(sizeof(node));
     for (int i = 0; i < word_count; i++);
-    if(s)
+    if(strcasecmp(word, cursor->word) = 0)
     // TODO
     return false;
 }
