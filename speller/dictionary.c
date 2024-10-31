@@ -36,11 +36,11 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    unsigned int index = hash(islower(word));
+    unsigned int index = hash(word);
     node *cursor = table[index];
     while (cursor != NULL)
 {
-    if (strcasecmp(cursor->word, word) == 0)
+    if (strcasecmp(islower(cursor->word), islower(word)) == 0)
     {
         return true;
     }
