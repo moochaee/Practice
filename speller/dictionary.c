@@ -36,7 +36,7 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    unsigned int index = hash(word);
+    unsigned int index = hash(islower(word));
     node *cursor = table[index];
     while (cursor != NULL)
 {
