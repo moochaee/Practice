@@ -63,7 +63,7 @@ bool load(const char *dictionary)
         int index = hash(buffer);
         n->next = table[index];
         table[index] = n;
-        word_count++
+        word_count++;
         }
         is_loaded = true
         fclose(source);
