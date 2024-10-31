@@ -56,8 +56,9 @@ bool load(const char *dictionary)
         while (fscanf(source, "%s", buffer) != EOF)
         {
         node *n = malloc(sizeof(node));
-        strcopy(n->word, buffer);
-        table->next = n->next
+        strcpy(n->word, buffer);
+        n->next = table[index];
+        table[index] = n;
         }
         is_loaded = true
         return true;
