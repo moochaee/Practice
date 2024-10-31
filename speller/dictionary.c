@@ -5,7 +5,6 @@
 
 #include "dictionary.h"
 
-#define BLOCK_SIZE BYTE
 
 // Represents a node in a hash table
 typedef struct node
@@ -47,7 +46,7 @@ bool load(const char *dictionary)
 {
     // TODO
     FILE *source = fopen(dictionary, "r");
-    while(fread(buffer, 1, BLOCK_SIZE, load)
+    while(fread(buffer, 1, 1, load)
     {
         return true;
     }
