@@ -41,12 +41,12 @@ bool check(const char *word)
     char copy[strlen(word) + 1];
     for (int i = 0; word[i]; i++)
     {
-        copy[i] = tolower((unsigned char) copy[i]);
+        copy[i] = tolower((unsigned char) word[i]);
     }
     copy[strlen(word)] = '\0';
     while (cursor != NULL)
 {
-    if (strcasecmp(cursor->word, word) == 0)
+    if (strcasecmp(cursor->word, copy) == 0)
     {
         return true;
     }
