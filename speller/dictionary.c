@@ -55,6 +55,7 @@ bool load(const char *dictionary)
     {
         while (fscanf(source, "%s", buffer) != EOF)
         {
+        node *n = malloc(sizeof(node));
         
         }
         is_loaded = true
