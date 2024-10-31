@@ -51,8 +51,8 @@ bool load(const char *dictionary)
     }
 
     else{
-        printf("File cannot be opened\n")
-        return false:
+        printf("File cannot be opened\n");
+        return false;
     }
 
 }
