@@ -37,10 +37,13 @@ node *table[N];
 bool check(const char *word)
 {
     unsigned int index = hash(word);
-    unsigned char *copy = word
     node *cursor = table[index];
-    for (int i = 0; copy[i]; i++)
-    copy[i] = tolower((unsigned char) copy[i]);
+    char copy[strlen(word) + 1];
+    for (int i = 0; word[i]; i++)
+    {
+        copy[i] = tolower((unsigned char) copy[i]);
+    }
+    copy[strlen(word)] = '\0';
     while (cursor != NULL)
 {
     if (strcasecmp(cursor->word, word) == 0)
