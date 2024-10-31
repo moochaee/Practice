@@ -47,6 +47,7 @@ bool load(const char *dictionary)
     // TODO
     if(FILE *source = fopen(dictionary, "r"))
     {
+        
         return true;
     }
 
