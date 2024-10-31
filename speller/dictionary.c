@@ -4,7 +4,10 @@
 #include <stdbool.h>
 
 #include "dictionary.h"
-
+//Create File
+FILE *source;
+//Create buffer of max word length +1 for '/0'
+    char buffer[LENGTH + 1];
 
 // Represents a node in a hash table
 typedef struct node
@@ -38,8 +41,6 @@ int hash = word_total % 101;
 return hash;
 }
 
-// Declare
-uint8_t buffer[BLOCK_SIZE]
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
@@ -67,7 +68,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     int word_total = 0;
-    FILE *source = fopen(dictionary, "r");
+    if(load = true)
     while (fscanf(source, "%s", buffer) != EOF)
     {
     word_total++;
