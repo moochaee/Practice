@@ -57,11 +57,13 @@ bool load(const char *dictionary)
         {
         node *n = malloc(sizeof(node));
         strcpy(n->word, buffer);
-        n->next = table[hash];
-        table[hash] = n;
+        int index = hash(buffer);
+        n->next = table[index];
+        table[index] = n;
         }
         is_loaded = true
         return true;
+        fclose(source);
     }
     // return false if file can't be opened
     else{
