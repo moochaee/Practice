@@ -110,6 +110,9 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    unsigned int unload_index = hash(word);
+    node *unload_cursor = table[unload_index];
+    while(table)
     // TODO
     return false;
 }
