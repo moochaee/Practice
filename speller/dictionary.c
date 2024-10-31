@@ -111,7 +111,7 @@ unsigned int size(void)
 bool unload(void)
 {
 
-    node *unload_cursor = table;
+    node *unload_cursor;
     for(int i = 0; i < N; i++)
     {
     while(table[i] != NULL)
