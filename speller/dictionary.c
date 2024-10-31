@@ -4,8 +4,10 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "dictionary.h"
+
 //Create File
 FILE *source;
 //Create buffer of max word length +1 for '/0'
