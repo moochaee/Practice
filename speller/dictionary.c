@@ -62,8 +62,8 @@ bool load(const char *dictionary)
         table[index] = n;
         }
         is_loaded = true
-        return true;
         fclose(source);
+        return true;
     }
     // return false if file can't be opened
     else{
