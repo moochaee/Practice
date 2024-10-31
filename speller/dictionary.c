@@ -67,10 +67,9 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 
 // Global variable to track if dictionary is loaded
-bool is_loaded = false;
 
-if (is_loaded) {
 unsigned int size(void)
+bool is_loaded = false;
 {
     if (is_loaded)
     {
