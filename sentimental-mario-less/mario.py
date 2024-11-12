@@ -1,20 +1,10 @@
 height = int(input("Height: "))
 
-try:
-    return int(input(promt))
-except:
-    height = int(input("Height: "))
 
-if height < 1 or height > 8:
-    height = int(input("Height: "))
-
-if not height.isdigit():
-    height = int(input("Height: "))
-
-if height = ""
-    height = int(input("Height: "))
-
-
-for i in range(height):
+while height > 0 or height < 9:
+    for i in range(height):
     print(f"{' ' * (height - i - 1)}{'#' * (i + 1)}")
+
+else
+    height = int(input("Height: "))
 
