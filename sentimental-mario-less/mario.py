@@ -8,6 +8,12 @@ except:
 if height < 1 or height > 8:
     height = int(input("Height: "))
 
+if not height.isdigit():
+    height = int(input("Height: "))
+
+if height = ""
+    height = int(input("Height: "))
+
 
 for i in range(height):
     print(f"{' ' * (height - i - 1)}{'#' * (i + 1)}")
