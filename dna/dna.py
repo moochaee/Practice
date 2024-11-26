@@ -24,8 +24,16 @@ def main():
         dnareader = csv.reader(dnafile)
 
     # TODO: Find longest match of each STR in DNA sequence
-    for sequence in dnareader
-    longest_run("AGAT")
+    for AGAT in dnareader
+    longest_match(AGAT)
+
+    for AATG in dnareader
+    longest_match(AATG)
+
+    for TATC in dnareader
+    longest_match(TATC)
+
+
 
     # TODO: Check database for matching profiles
 
