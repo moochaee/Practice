@@ -5,7 +5,13 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    
+    while True:
+        if len(sys.argv) == 3:
+            break
+        else:
+            print("Command line argument requirement not met")
+            sys.exit()
+
 
     # TODO: Read database file into a variable
 
