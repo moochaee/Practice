@@ -1,12 +1,11 @@
 from cs50 import get_float
 
-While True
+while True:
     try:
         change = get_float("Change: ")
-        if height > 0.00
+        if change > 0.00:
         break
     except ValueError:
-        change = get_float("Change: ")
-
+        
 
 
