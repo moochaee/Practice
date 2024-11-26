@@ -7,7 +7,6 @@ int calculate_nickels(int cents);
 int calculate_pennies(int cents);
 
 
-
 int main(void)
 {
     // Prompt the user for change owed, in cents
