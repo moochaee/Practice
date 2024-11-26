@@ -12,4 +12,9 @@ while True:
     except ValueError:
         pass
 
+quarters = 0
+for quarter in quarters
+while change >= 0.25:
+    quarters =+ quarters
+    change = change - .25
 
