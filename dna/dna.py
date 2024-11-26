@@ -27,16 +27,9 @@ def main():
     STRList = ["AGAT" , "AATG" , "TATC"]
 
     # TODO: Find longest match of each STR in DNA sequence
-
-
-    for AGAT in dnareader
-    longest_match(AGAT)
-
-    for AATG in dnareader
-    longest_match(AATG)
-
-    for TATC in dnareader
-    longest_match(TATC)
+    for STR in STRList:
+    longest_run = longest_match(dna_sequence, STR)
+    print(f"{STR}: {longest_run}")
 
 
 
