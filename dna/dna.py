@@ -24,6 +24,8 @@ def main():
         dnareader = csv.reader(dnafile)
 
     # TODO: Find longest match of each STR in DNA sequence
+    for sequence in dnareader
+    if 
 
     # TODO: Check database for matching profiles
 
