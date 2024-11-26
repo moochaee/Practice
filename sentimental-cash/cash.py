@@ -1,7 +1,6 @@
 from cs50 import get_float
 
 
-
 while True:
     try:
         # get user input for change
@@ -13,8 +12,23 @@ while True:
         pass
 
 quarters = 0
-for quarter in quarters
 while change >= 0.25:
-    quarters =+ quarters
+    quarters += 1
     change = change - .25
 
+dimes = 0
+while change >= 0.10:
+    dimes += 1
+    change = change - .10
+
+nickels = 0
+while change >= 0.05:
+    nickels += 1
+    change = change - .05
+
+pennies = 0
+while change >= 0.01:
+    pennies += 1
+    change = change - .01
+
+print(quarters + dimes + nickels + pennies)
