@@ -7,12 +7,12 @@ for letter in text:
     if letter.isalpha():
         letters += 1
 
-words = 0
+words = 1
 for letter in text:
-    if letter = " ":
+    if letter == " ":
         words += 1
 
 sentences = 0
 for letter in text:
-    if letter = "." or letter = "!" or letter = "?":
+    if letter == "." or letter == "!" or letter == "?":
         sentences += 1
