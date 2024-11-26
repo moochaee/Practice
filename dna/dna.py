@@ -20,11 +20,14 @@ def main():
 
 
     # TODO: Read DNA sequence file into a variable
-    with open(sys.argv[2] , r) as dnafile:
-        dnareader = csv.reader(dnafile)
+    with open(sys.argv[2], 'r') as dnafile:
+    dna_sequence = dnafile.read().strip()
+
+    # List of STRs
+    STRList = ["AGAT" , "AATG" , "TATC"]
 
     # TODO: Find longest match of each STR in DNA sequence
-    STRList = ["AGAT" , "AATG" , "TATC"]
+
 
     for AGAT in dnareader
     longest_match(AGAT)
