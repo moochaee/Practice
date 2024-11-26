@@ -21,7 +21,7 @@ def main():
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as dnafile:
-        dnareader = csv.Reader(dnafile)
+        dnareader = csv.reader(dnafile)
         print(dnareader.fieldnames)
 
     # TODO: Find longest match of each STR in DNA sequence
