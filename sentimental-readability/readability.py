@@ -16,3 +16,5 @@ sentences = 0
 for letter in text:
     if letter == "." or letter == "!" or letter == "?":
         sentences += 1
+
+L = 
