@@ -4,8 +4,8 @@ while True:
     try:
         change = get_float("Change: ")
         if change > 0.00:
-        break
+            break
     except ValueError:
-        
+
 
 
