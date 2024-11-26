@@ -20,5 +20,11 @@ for letter in text:
 L = round(((letters/words) *100), 2)
 S = round(((sentences/words) *100), 2)
 
-CLS = round(0.0588 * L - 0.296 * S - 15.8, 2)
+CLS = round(0.0588 * L - 0.296 * S - 15.8)
 
+if CLS <= 0:
+    print("Before Grade 1")
+elif CLS == 18:
+    print("Grade 16+")
+else:
+    print(f"Grade: {CLS}")
