@@ -12,14 +12,10 @@ def main():
             print("Command line argument requirement not met")
             sys.exit()
 
-
     # TODO: Read database file into a list of dictionaries
     with open(sys.argv[1], 'r') as dbfile:
         dbreader = csv.DictReader(dbfile)
         database = list(dbreader)
-        print(database[0].keys())  # Print the keys of the first profile
-
-
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as dnafile:
@@ -31,9 +27,6 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     for STR in STRList:
         longest_run = longest_match(dna_sequence, STR)
-        print(f"{STR}: {longest_run}")
-
-
 
     # TODO: Check database for matching profiles
 
@@ -47,6 +40,7 @@ def main():
             print(profile["name"])
             return
     print("No match")
+
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
