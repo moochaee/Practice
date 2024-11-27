@@ -17,7 +17,9 @@ def main():
     with open(sys.argv[1], 'r') as dbfile:
         dbreader = csv.DictReader(dbfile)
         database = list(dbreader)
-    
+        print(database[0].keys())  # Print the keys of the first profile
+
+
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as dnafile:
