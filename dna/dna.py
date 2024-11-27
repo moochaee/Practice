@@ -36,13 +36,13 @@ def main():
 
     for profile in database:
         match = True
-    for STR in STRList:
-        if int(profile[STR]) != longest_match(dna_sequence, STR):
-            match = False
-            break
-    if match:
-        print(profile["name"])
-        return
+        for STR in STRList:
+            if int(profile[STR]) != longest_match(dna_sequence, STR):
+                match = False
+                break
+        if match:
+            print(profile["name"])
+            return
 print("No match")
 
 
