@@ -23,7 +23,7 @@ def main():
         dna_sequence = dnafile.read().strip()
 
     # List of STRs
-    STRList = ["AGAT" , "AATG" , "TATC" , "AGATC", "TTTTTTCT" , "TCTAG" , "GATA" , "GAAA" , "TCTG"]
+    STRList = ["AATG" , "TATC" , "AGATC", "TTTTTTCT" , "TCTAG" , "GATA" , "GAAA" , "TCTG"]
 
     # TODO: Find longest match of each STR in DNA sequence
     for STR in STRList:
