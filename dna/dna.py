@@ -43,8 +43,7 @@ def main():
         if match:
             print(profile["name"])
             return
-print("No match")
-
+    print("No match")
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
