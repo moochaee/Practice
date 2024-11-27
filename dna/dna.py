@@ -15,27 +15,27 @@ def main():
 
     # TODO: Read database file into a list of dictionaries
     with open(sys.argv[1], 'r') as dbfile:
-    dbreader = csv.DictReader(dbfile)
-    database = list(dbreader)
-    
+        dbreader = csv.DictReader(dbfile)
+        database = list(dbreader)
+
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as dnafile:
-    dna_sequence = dnafile.read().strip()
+        dna_sequence = dnafile.read().strip()
 
     # List of STRs
     STRList = ["AGAT" , "AATG" , "TATC"]
 
     # TODO: Find longest match of each STR in DNA sequence
     for STR in STRList:
-    longest_run = longest_match(dna_sequence, STR)
-    print(f"{STR}: {longest_run}")
+        longest_run = longest_match(dna_sequence, STR)
+        print(f"{STR}: {longest_run}")
 
 
 
     # TODO: Check database for matching profiles
 
     for profile in database:
-    match = True
+        match = True
     for STR in STRList:
         if int(profile[STR]) != longest_match(dna_sequence, STR):
             match = False
