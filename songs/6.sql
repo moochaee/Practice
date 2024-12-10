@@ -1,6 +1,6 @@
 SELECT name
 FROM songs
-WHERE artists_id = (
+WHERE artist_id = (
     SELECT id
     FROM artists
     WHERE name = 'Post Malone'
