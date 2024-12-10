@@ -1,0 +1,34 @@
+user: i accidentally closed all "bash" how do i get one back
+
+assistant: You can open a new terminal by clicking on the terminal icon or using the menu options to open a new terminal window. If you're using Codespaces, you can also use the shortcut `Ctrl + Shift + ` (backtick) to open a new terminal.
+
+user: what is backtick
+
+assistant: A backtick is the character `, usually found on the same key as the tilde (~) on most keyboards, typically located in the top-left corner.
+
+user: thanks!
+
+user: SELECT title
+FROM movies
+WHERE year >= '2018';
+
+for the third sql query in movies
+
+assistant: It looks like you're trying to select movie titles from the year 2018 and later. Your query looks mostly correct, but remember that the year is an integer, not a string. Try removing the quotes around the year:
+
+```sql
+SELECT title
+FROM movies
+WHERE year >= 2018;
+```
+
+This should work!
+
+user: it is coming up as red on check 50
+
+assistant: Can you share the exact error message you're getting from check50? This will help us understand what might be going wrong.
+
+user: :( 3.sql produces correct result
+    expected "Avengers: Infi...", not "Ma Rainey's Bl..."
+
+assistant: It looks like your query might be returning results in the wrong order. How can you modify your query to ensure the results are sorted by year and then by title?
