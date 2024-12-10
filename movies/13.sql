@@ -4,5 +4,7 @@ JOIN stars AS star1 ON movies.id = star1.movie_id
 JOIN people AS kevin ON star1.person_id = kevin.id
 JOIN stars AS star2 ON movies.id = star2.movie_id
 JOIN people AS co_star ON star2.person_id = co_star.id
-WHERE people.name = 'Kevin Bacon'
-GROUP BY people.name
+JOIN movies ON movies.id = stars.movie_id
+WHERE kevin.name = 'Kevin Bacon'
+AND co_star.name != 'Kevin Bacon'
+;
