@@ -1,0 +1,380 @@
+user: can i join more than one column to another column on one JOIN line?
+
+assistant: Yes, you can join multiple columns in a single JOIN statement. You can use the AND operator to specify multiple conditions. For example:
+
+```sql
+SELECT *
+FROM table1
+JOIN table2
+ON table1.column1 = table2.column1 AND table1.column2 = table2.column2;
+```
+
+This will join the tables based on both column1 and column2.
+
+user: what about if they are different tables eg. table 1 column 1 = table 2 column 1 AND table 1 column 1 = table 3 column 1
+
+assistant: Yes, you can join multiple tables with different conditions. You can chain multiple JOINs together. For example:
+
+```sql
+SELECT *
+FROM table1
+JOIN table2 ON table1.column1 = table2.column1
+JOIN table3 ON table1.column1 = table3.column1;
+```
+
+This will join `table1` with `table2` on `column1` and also join `table1` with `table3` on `column1`.
+
+user: sqlite> SELECT title
+   ...> FROM movies
+   ...> JOIN stars ON movies.id = stars.movie_id
+   ...> JOIN ratings on movies.id = ratings.movie_id
+   ...> JOIN people ON people.id = stars.person_id
+   ...> WHERE people.id = 'Chadwick Boseman'
+   ...> ORDER BY ratings.rating DESC
+   ...> LIMIT 5
+   ...> ;
+
+assistant: It looks like you are trying to find the top 5 movies starring Chadwick Boseman, ordered by rating. However, there seems to be an issue with the `WHERE` clause. You should be comparing `people.name` to 'Chadwick Boseman' instead of `people.id`. 
+
+Can you try updating your query to:
+
+```sql
+WHERE people.name = 'Chadwick Boseman'
+```
+
+Does that help?
+
+user: SELECT title
+FROM movies
+JOIN stars ON movies.id = stars.movie_id
+JOIN ratings ON movies.id = ratings.movie_id
+JOIN people ON people.id = stars.person_id
+WHERE person.id = 'Chadwick Boseman'
+ORDER BY ratings.rating DESC
+LIMIT 5
+;
+
+
+
+
+movies/ $ cat 11.sql | sqlite3 movies.db
+Parse error near line 1: no such column: person.id
+   JOIN people ON people.id = stars.person_id WHERE person.id = 'Chadwick Bosema
+                                      error here ---^
+
+assistant: It looks like there's a typo in your `WHERE` clause. It should be `people.id`, not `person.id`. Also, you should be comparing `people.name` to 'Chadwick Boseman'. Try this:
+
+```sql
+WHERE people.name = 'Chadwick Boseman'
+```
+
+Does that help?
+
+user: syntax to search for multiple people in a WHERE line
+
+assistant: To search for multiple people in a `WHERE` clause, you can use the `IN` operator. For example:
+
+```sql
+WHERE people.name IN ('Chadwick Boseman', 'Scarlett Johansson')
+```
+
+This will filter results to include only those rows where the `name` is either 'Chadwick Boseman' or 'Scarlett Johansson'.
+
+user: what about if i just want the titles in which they are both in
+
+assistant: To find titles where both actors are in the same movie, you can use a self-join on the `stars` table. Here's a general idea:
+
+```sql
+SELECT title
+FROM movies
+JOIN stars AS s1 ON movies.id = s1.movie_id
+JOIN people AS p1 ON s1.person_id = p1.id
+JOIN stars AS s2 ON movies.id = s2.movie_id
+JOIN people AS p2 ON s2.person_id = p2.id
+WHERE p1.name = 'Chadwick Boseman' AND p2.name = 'Scarlett Johansson'
+```
+
+This will give you the titles of movies where both actors appear together
+
+user: is that anywhere in the lecture or section or shorts?
+
+assistant: The concept of self-joins might not be explicitly covered in the lectures or sections, but understanding joins and how to use them is part of the course. You can apply the principles of joins to solve this problem. If you need more help, reviewing the materials on SQL joins and practicing with examples can be beneficial.
+
+user: but if we havent learned self joins how are we expected to figure that out
+
+assistant: I understand your concern. The course encourages problem-solving and applying concepts in new ways. If you haven't learned self-joins explicitly, try breaking down the problem and using the concepts you do know. Think about how you can use multiple joins to achieve the desired result. This approach will help you develop your problem-solving skills.
+
+user: so the example above replicates the oclumn twice into the joined table?
+
+assistant: Yes, the example above joins the `stars` and `people` tables twice, creating two sets of columns. This allows you to check for both actors in the same movie.
+
+user: is there a way to find it after the join in the WHERE or another function
+
+assistant: To find titles where both actors are in the same movie after the join, you can use a `GROUP BY` and `HAVING` clause. Here's a general idea:
+
+```sql
+SELECT title
+FROM movies
+JOIN stars ON movies.id = stars.movie_id
+JOIN people ON stars.person_id = people.id
+WHERE people.name IN ('Chadwick Boseman', 'Scarlett Johansson')
+GROUP BY title
+HAVING COUNT(DISTINCT people.name) = 2
+```
+
+This groups the results by movie title and ensures that both actors are present in the movie.
+
+user: can you give me some information on the HAVING function, using some examples
+
+assistant: The `HAVING` clause is used to filter groups of rows after the `GROUP BY` clause has been applied. It is similar to the `WHERE` clause but operates on grouped data. Here's an example:
+
+```sql
+SELECT department, COUNT(*)
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 10
+```
+
+This query selects departments with more than 10 employees. The `HAVING` clause filters the grouped results based on the condition provided.
+
+user: SELECT title
+FROM movies
+JOIN stars on movies.id = stars.movie_id
+JOIN people on stars.person_id = people.id
+WHERE people.name IN ('Bradley Cooper', 'Jennifer Lawrence')
+GROUP BY title
+HAVING COUNT(DISTINCT people.name) = 2
+;
+
+
+so could i technically just do COUNT(*) = 2 in this?
+
+assistant: Using `COUNT(*) = 2` would not be correct in this case because it counts all rows, not just distinct actor names. You need `COUNT(DISTINCT people.name) = 2` to ensure both actors are present
+
+user: okay
+
+assistant: Could you show me the code you have so far that implements the advice I provided? This will help me understand where you might need further assistance.
+
+user: so for the last kevin bacon query, instead of filtering specific kevin bacon movies i need to search for ones containing him as to not filter out his co stars in that right? would the where function still work?
+
+assistant: Yes, you are correct. Instead of filtering for specific Kevin Bacon movies, you should search for movies containing him and then find his co-stars. The `WHERE` clause can still be used to filter for Kevin Bacon, and then you can use additional logic to find his co-stars. 
+
+For example:
+
+```sql
+SELECT title, co_star.name
+FROM movies
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
+WHERE kevin.name = 'Kevin Bacon' AND co_star.name != 'Kevin Bacon'
+```
+
+This query finds movies with Kevin Bacon and lists his co-stars.
+
+user: and what about after i have joined normally without self.join
+
+assistant: Could you show me the code you have so far that implements the advice I provided? This will help me understand where you might need further assistance.
+
+user: SELECT name
+FROM people
+JOIN people on people.id = stars.people_id
+JOIN movies on movies.id = stars.movies.id
+WHERE people.name = 'Kevin Bacon'
+GROUP BY people.name
+
+assistant: It looks like you have a few issues with your query. For example, you are joining the `people` table to itself, which is not necessary. Also, you need to join the `stars` table to get the movie information. 
+
+Can you try to rewrite your query to join the `stars` table correctly and then find Kevin Bacon's co-stars?
+
+user: SELECT name
+FROM people
+JOIN stars on people.id = stars.people_id
+JOIN movies on movies.id = stars.movies.id
+WHERE people.name = 'Kevin Bacon'
+GROUP BY people.name
+
+assistant: It looks like you're on the right track, but you need to find Kevin Bacon's co-stars. You should join the `stars` table twice: once for Kevin Bacon and once for his co-stars. 
+
+Can you try to adjust your query to join the `stars` table twice and filter out Kevin Bacon from the co-stars?
+
+user: so there is no way to finish the query just using the current joins
+
+assistant: You can finish the query using the current joins, but you need to adjust it to find Kevin Bacon's co-stars. Try joining the `stars` table twice and filtering out Kevin Bacon from the co-stars.
+
+user: SELECT name
+FROM people
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
+WHERE kevin.name = 'Kevin Bacon'
+AND co_star.name != 'Kevin Bacon'
+
+assistant: It looks like you're almost there! However, you need to include the `movies` table in your joins. Try adding the `movies` table to your query and ensure the joins are correctly referencing it.
+
+user: Parse error near line 1: ambiguous column name: name
+  SELECT name FROM people JOIN stars AS star1 ON movies.id = star1.movie_id JOIN
+         ^--- error here
+
+there is definitely a 'name' column in people
+
+assistant: It looks like the error is due to ambiguity in the `name` column. Try specifying the table for the `name` column in your `SELECT` statement, like this:
+
+```sql
+SELECT co_star.name
+FROM movies
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
+WHERE kevin.name = 'Kevin Bacon'
+AND co_star.name != 'Kevin Bacon'
+```
+
+user: am i allowed to find documentation on the JOIN AS function if i cant find any in the CS50 learnings?
+
+assistant: Yes, you are allowed to find documentation on SQL joins and the `AS` keyword. The official SQL documentation or other reputable resources can be very helpful.
+
+user: what are other reputable resources
+
+assistant: Some reputable resources for SQL documentation include:
+
+- W3Schools (https://www.w3schools.com/sql/)
+- SQL Tutorial (https://www.sqltutorial.org/)
+- The official documentation for your specific SQL database (e.g., MySQL, PostgreSQL, SQLite)
+
+These resources can help you understand how to use SQL joins and the `AS` keyword effectively.
+
+user: should i look for sqlite3 documentation?
+
+assistant: Yes, looking for SQLite documentation would be helpful for understanding how to use SQL features specific to SQLite.
+
+user: would a subquerie be better for the kevin bacon query?
+
+assistant: Using a subquery can be a good approach for the Kevin Bacon query. It can help simplify the main query by breaking it down into smaller, more manageable parts. Would you like to explore how to structure a subquery for this problem?
+
+user: yes please
+
+assistant: Sure! Let's break it down. First, you can create a subquery to find the movie IDs that Kevin Bacon has acted in. Then, use that subquery to find the co-stars.
+
+For example:
+1. Subquery to find movie IDs with Kevin Bacon.
+2. Main query to find co-stars in those movies.
+
+What do you think the subquery should look like to find the movie IDs?
+
+user: also need to make sure it is the kevin bacon from 1958
+
+assistant: Got it! To ensure it's the Kevin Bacon born in 1958, you can include a condition in your subquery. How would you modify the subquery to include this condition?
+
+user: does the main query go first or inside parenthesis
+
+assistant: The subquery goes inside parentheses within the main query. This way, the main query can use the results of the subquery. Can you try writing the subquery to find the movie IDs with Kevin Bacon born in 1958
+
+user: so i sohuld write 2.above first
+
+assistant: Yes, start by writing the subquery to find the movie IDs with Kevin Bacon born in 1958. Once you have that, you can use it in the main query to find the co-stars. Give it a try!
+
+user: noooo above 2. is the main query
+
+assistant: Can you show me the subquery you wrote to find the movie IDs with Kevin Bacon born in 1958? Then we can work on integrating it into the main query.
+
+user: can you elaborate on this 
+
+Sure! Let's break it down. First, you can create a subquery to find the movie IDs that Kevin Bacon has acted in. Then, use that subquery to find the co-stars.
+
+For example:
+
+    Subquery to find movie IDs with Kevin Bacon.
+    Main query to find co-stars in those movies.
+
+What do you think the subquery should look like to find the movie IDs?
+
+assistant: Sure! Let's break it down. First, you can create a subquery to find the movie IDs that Kevin Bacon has acted in. Then, use that subquery to find the co-stars.
+
+For example:
+
+1. Subquery to find movie IDs with Kevin Bacon.
+2. Main query to find co-stars in those movies.
+
+What do you think the subquery should look like to find the movie IDs?
+
+user: SELECT co_star.name
+FROM people
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
+JOIN movies ON movies.id = star1.movie_id
+WHERE kevin.name = 'Kevin Bacon'
+AND kevin.birth = '1958'
+AND co_star.name != 'Kevin Bacon'
+;
+
+assistant: Your query looks mostly correct, but it seems like you have some redundant joins and the order of joins might be causing confusion. Let's simplify it a bit:
+
+1. First, find the movie IDs that Kevin Bacon (born in 1958) has acted in.
+2. Then, find the co-stars in those movies.
+
+Can you try breaking it down into these two steps? Start with the subquery to find the movie IDs.
+
+user: ive decided i want to use join functions again not subqueries
+
+SELECT co_star.name
+FROM people
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
+JOIN movies ON movies.id = star1.movie_id
+WHERE kevin.name = 'Kevin Bacon'
+AND kevin.birth = '1958'
+AND co_star.name != 'Kevin Bacon'
+;
+
+assistant: It looks like you have the right idea, but there are some redundant joins. Try simplifying your query by removing unnecessary joins. How can you adjust your query to ensure you only join the necessary tables once?
+
+user: what ones are redundant? i feel like i need people and stars twice to split kevin and his co stars?
+
+assistant: You're right that you need to join the `people` and `stars` tables twice to differentiate between Kevin Bacon and his co-stars. However, you have an extra join with the `movies` table. You only need to join `movies` once. Can you try removing the redundant join with `movies` and see if that helps?
+
+user: ah gotcha
+
+assistant: Can you show me the updated query after removing the redundant join with `movies`?
+
+user: SELECT co_star.name
+FROM people
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
+WHERE kevin.name = 'Kevin Bacon'
+AND kevin.birth = '1958'
+AND co_star.name != 'Kevin Bacon'
+;
+
+assistant: It looks like you still have a reference to `movies.id` without joining the `movies` table. Can you try adding the `movies` table join back in, but only once?
+
+user: you just told me to delete it
+
+assistant: Can you show me some code that implements the advice I gave about removing the redundant join with `movies`?
+
+user: SELECT co_star.name
+FROM people
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
+JOIN movies ON movies.id = star1.movie_id
+WHERE kevin.name = 'Kevin Bacon'
+AND kevin.birth = '1958'
+AND co_star.name != 'Kevin Bacon'
+;
+
+assistant: It looks like you still have the `movies` table joined twice. Try removing the redundant join and ensure you only join `movies` once.
+
+user: which one do you think is the redundant one? what line
+
+assistant: The redundant join is on the line where you have `JOIN movies ON movies.id = star1.movie_id`. You can remove that line.
