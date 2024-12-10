@@ -1,6 +1,8 @@
 SELECT name
 FROM people
-JOIN stars on people.id = stars.people_id
-JOIN movies on movies.id = stars.movies.id
+JOIN stars AS star1 ON movies.id = star1.movie_id
+JOIN people AS kevin ON star1.person_id = kevin.id
+JOIN stars AS star2 ON movies.id = star2.movie_id
+JOIN people AS co_star ON star2.person_id = co_star.id
 WHERE people.name = 'Kevin Bacon'
 GROUP BY people.name
