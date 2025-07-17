@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Results | Summer Smackdown</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+    header .info {
+      display: inline-block;
+      position: relative;
+      cursor: help;
+      color: #007bff;
+    }
+    header .info:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+    header .tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    table th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Sunglasses emoji for consistency -->
+    <div style="font-size:3rem;">😎</div>
+    <h1>Summer Smackdown Results</h1>
+    <div class="info">
+      ℹ️
+      <div class="tooltip">
+        Your summer stats at a glance!
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>{{ city1 }}</th>
+          <th>{{ city2 }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Average Temp (°C)</td>
+          <td>{{ metrics1.average_temperature }}</td>
+          <td>{{ metrics2.average_temperature }}</td>
+        </tr>
+        <tr>
+          <td>Average Rainfall (mm)</td>
+          <td>{{ metrics1.average_rainfall }}</td>
+          <td>{{ metrics2.average_rainfall }}</td>
+        </tr>
+        <tr>
+          <td>Days ≥ 20 °C</td>
+          <td>{{ metrics1.days_above_20 }}</td>
+          <td>{{ metrics2.days_above_20 }}</td>
+        </tr>
+        <tr>
+          <td>Days ≥ 25 °C</td>
+          <td>{{ metrics1.days_above_25 }}</td>
+          <td>{{ metrics2.days_above_25 }}</td>
+        </tr>
+        <tr>
+          <td>Days ≥ 30 °C</td>
+          <td>{{ metrics1.days_above_30 }}</td>
+          <td>{{ metrics2.days_above_30 }}</td>
+        </tr>
+        <tr>
+          <td>Days ≥ 35 °C</td>
+          <td>{{ metrics1.days_above_35 }}</td>
+          <td>{{ metrics2.days_above_35 }}</td>
+        </tr>
+        <tr>
+          <td>Days ≥ 40 °C</td>
+          <td>{{ metrics1.days_above_40 }}</td>
+          <td>{{ metrics2.days_above_40 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+    <!-- New Comparison link -->
+    <div style="margin-top: 2rem;">
+    <a href="/" class="button">⟲ New Comparison</a>
+    </div>
+
+</body>
+</html>
