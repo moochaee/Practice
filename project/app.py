@@ -24,6 +24,7 @@ def compare():
         end_dt   = request.args.get("endDate")
     else:
         city1    = request.form.get("city1")
+        print(city1)
         city2    = request.form.get("city2")
         start_dt = request.form.get("startDate")
         end_dt   = request.form.get("endDate")
