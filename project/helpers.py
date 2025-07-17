@@ -39,8 +39,8 @@ def get_history(city, start_date, end_date):
 
     # Fetch and return the daily data block
     response = requests.get(url, params=params)
-    print(response)
-    response.raise_for_status()
+    print(response.status_code)
+    print(response.text)
     daily = response.json().get("daily", {})
     return daily
 
