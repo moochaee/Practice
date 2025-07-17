@@ -26,8 +26,11 @@ def compare():
         city1    = request.form.get("city1")
         print(city1)
         city2    = request.form.get("city2")
+        print(city2)
         start_dt = request.form.get("startDate")
+        print(start_dt)
         end_dt   = request.form.get("endDate")
+        print(end_dt)
 
     # Now proceed as before
     daily1   = get_history(city1, start_dt, end_dt)
