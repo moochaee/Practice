@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
+
 from helpers import get_history, compute_metrics
 
 # Configure application
@@ -14,20 +15,25 @@ def index():
 
 
 
+
 @app.route("/compare", methods=["GET", "POST"])
 def compare():
-    """Fetch weather data, compute metrics, or bounce back if inputs are missing."""
-    # request.values covers both form (POST) and query string (GET)
-    city1    = request.values.get("city1", "").strip()
-    city2    = request.values.get("city2", "").strip()
-    start_dt = request.values.get("startDate", "").strip()
-    end_dt   = request.values.get("endDate", "").strip()
+    """Fetch weather data on POST; redirect to form on GET."""
+    if request.method == "GET":
+        # Someone navigated here directly—send them back to the form
+        return redirect(url_for("index"))
 
-    # If any field is blank, send them back to the index page
+    # --- otherwise, it’s a POST with your form data ---
+    city1    = request.form.get("city1")
+    city2    = request.form.get("city2")
+    start_dt = request.form.get("startDate")
+    end_dt   = request.form.get("endDate")
+
+    # Validate all fields present
     if not all([city1, city2, start_dt, end_dt]):
-        return redirect("/")
+        return redirect(url_for("index"))
 
-    # Otherwise proceed as before
+    # Fetch & compute
     daily1   = get_history(city1, start_dt, end_dt)
     daily2   = get_history(city2, start_dt, end_dt)
     metrics1 = compute_metrics(daily1)
@@ -42,6 +48,7 @@ def compare():
         metrics1=metrics1,
         metrics2=metrics2
     )
+
 
 
 
