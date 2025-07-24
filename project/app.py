@@ -14,7 +14,7 @@ def index():
 
 
 
-@app.route("/compare")  # GET is the default
+@app.route("/compare")  # GET 
 def compare():
     """Fetch weather data for both cities, compute metrics, and render results."""
     # Grab inputs from query string
