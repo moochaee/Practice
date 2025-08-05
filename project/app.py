@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for
-
+from datetime import date, timedelta
 from helpers import get_history, compute_metrics
 
 # Configure application
@@ -9,9 +9,11 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-    """Render the landing page."""
-    return render_template("index.html")
-
+    """Render the landing page with date limits."""
+    # yesterday in YYYY-MM-DD
+    yesterday = date.today() - timedelta(days=1)
+    max_date   = yesterday.isoformat()
+    return render_template("index.html", max_date=max_date)
 
 
 
