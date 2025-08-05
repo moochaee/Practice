@@ -13,3 +13,13 @@ document
   .addEventListener("click", () => {
     window.location.href = "/";
   });
+
+
+  // On index page load, reset forms
+window.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("compareForm");
+  if (form) {
+    form.reset();
+  }
+});
+
