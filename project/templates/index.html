@@ -1,127 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>☀️ Melbourne vs Sydney Showdown</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      font-size: 2rem;
-      margin: 0.5rem 0;
-    }
-    header .info {
-      display: inline-block;
-      position: relative;
-      cursor: help;
-      color: #007bff;
-    }
-    header .info:hover .tooltip {
-      opacity: 1;
-      visibility: visible;
-    }
-    header .tooltip {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      padding: 0.5rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.2s;
-      pointer-events: none;
-    }
-    form {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    form input, form button {
-      padding: 0.75rem 1rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    form button {
-      background: #007bff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    form button:hover {
-      background: #0056b3;
-    }
-  </style>
-  <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
-</head>
-<body>
 
-  <header>
-    <!-- Sunglasses emoji for fun -->
-    <div style="font-size:3rem;">😎</div>
-    <h1>Summer Smackdown!</h1>
-    <div class="info">
-      ℹ️
-      <div class="tooltip">
-        Pick two cities and a date range to see which one really brings the heat!
-      </div>
-    </div>
-  </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>☀️ Melbourne vs Sydney Showdown</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: #f9f9f9;
+                color: #333;
+            }
 
-  <!-- Spinner: hidden until form submission -->
-  <div
-    id="spinner"
-    style="display: none; text-align: center; margin: 1rem 0;"
-  >
-    Loading… please wait.
-  </div>
+            header {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
 
-  <!-- Input form for min/max date  -->
- <input
-      type="date"
-      name="startDate"
-      min="1940-01-01"
-      max="{{ max_date }}"
-      value="{{ max_date }}"
-      required
-    />
-    <input
-      type="date"
-      name="endDate"
-      min="1940-01-01"
-      max="{{ max_date }}"
-      value="{{ max_date }}"
-      required
-    />
-    <button type="submit">Compare</button>
-  </form>
+            header h1 {
+                font-size: 2rem;
+                margin: 0.5rem 0;
+            }
 
-  <script>
-    // spinner logic
-    document
-      .getElementById("compareForm")
-      .addEventListener("submit", () => {
-        document.getElementById("spinner").style.display = "block";
-      });
-  </script>
-</body>
+            header .info {
+                display: inline-block;
+                position: relative;
+                cursor: help;
+                color: #007bff;
+            }
+
+            header .info:hover .tooltip {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            header .tooltip {
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #333;
+                color: #fff;
+                padding: 0.5rem;
+                border-radius: 4px;
+                font-size: 0.9rem;
+                white-space: nowrap;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.2s;
+                pointer-events: none;
+            }
+
+            form {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            form input,
+            form button {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            form button {
+                background: #007bff;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+
+            form button:hover {
+                background: #0056b3;
+            }
+        </style>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+    </head>
+
+    <body>
+
+        <header>
+            <!-- Sunglasses emoji for fun -->
+            <div style="font-size:3rem;">😎</div>
+            <h1>Summer Smackdown!</h1>
+            <div class="info">
+                ℹ️
+                <div class="tooltip">
+                    Pick two cities and a date range to see which one really brings the heat!
+                </div>
+            </div>
+        </header>
+
+        <!-- Spinner: hidden until form submission -->
+        <div id="spinner" style="display: none; text-align: center; margin: 1rem 0;">
+            Loading… please wait.
+        </div>
+
+
+        <!-- Input form for city comparison -->
+        <form id="compareForm" action="/compare" method="POST">
+            <!-- cache-busting nonce -->
+            <input type="hidden" name="nonce" id="nonce" value="" />
+
+            <!-- City 1 input -->
+            <input type="text" name="city1" placeholder="City 1 (e.g. Melbourne)" required />
+
+            <!-- City 2 input -->
+            <input type="text" name="city2" placeholder="City 2 (e.g. Sydney)" required />
+            <!-- Input form for min/max date  -->
+            <input type="date" name="startDate" min="1940-01-01" max="{{ max_date }}" value="{{ max_date }}" required />
+            <input type="date" name="endDate" min="1940-01-01" max="{{ max_date }}" value="{{ max_date }}" required />
+            <button type="submit">Compare</button>
+        </form>
+
+        <script>
+            // spinner logic
+            document
+                .getElementById("compareForm")
+                .addEventListener("submit", () => {
+                    document.getElementById("spinner").style.display = "block";
+                });
+        </script>
+    </body>
+
 </html>
