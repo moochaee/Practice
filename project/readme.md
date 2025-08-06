@@ -12,6 +12,9 @@
 
 ### about.html accessed via the front page, explains project purpose and what data sources were used.
 
+### scripts.js Controls dynamic spinners like the loading message on index.html and the form reset which i used to try and workaround the issue where i was getting a 400 error upon resubmission and the navigation back to home page upon submission of the "new comparison button"
+
+### with respect to AI assistance, I used GPT for recommendation of an appropriate API, and generating ideas for names, emojis and styling enhancements.
 
 
- 
+
