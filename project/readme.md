@@ -17,4 +17,6 @@
 ### with respect to AI assistance, I used GPT for recommendation of an appropriate API, and generating ideas for names, emojis and styling enhancements.
 
 
+#### I am really proud of how this came together using some of the favourite learnings gathered throughout the course. If you're curious about how your city stacks up, please give it a try!
+
 
