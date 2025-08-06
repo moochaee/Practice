@@ -1,0 +1,72 @@
+<!-- templates/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Summer Smackdown</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    main {
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .back-link {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .back-link a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="font-size:3rem;">📍</div>
+    <h1>About This Project</h1>
+  </header>
+
+  <main>
+    <p>Hi there – welcome to my project!</p>
+    <p>
+      I’m from Melbourne, Australia, and like many of us, I’ve heard all the jokes about our “four seasons in one day” weather.
+      So for my CS50 final project, I thought it’d be fun to build something that lets people compare weather across cities—My beautiful one included.
+    </p>
+    <p>
+      It is a light-hearted way to see real weather data and maybe challenge a few assumptions along the way.
+    </p>
+    <p>
+      <em>And if you’re from Sydney... I suggest you to run a summer comparison and see who’s really getting drenched.</em>
+    </p>
+
+    <hr />
+
+    <p><strong>Built with:</strong></p>
+    <ul>
+      <li><a href="https://open-meteo.com/" target="_blank">Open-Meteo API</a> – for historical weather and geolocation data</li>
+      <li>Python (Flask), HTML/CSS, and a dash of JavaScript</li>
+    </ul>
+  </main>
+
+  <div class="back-link">
+    <a href="/">← Back to Comparison Tool</a>
+  </div>
+</body>
+</html>

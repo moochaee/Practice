@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>☀️ Melbourne vs Sydney Showdown</title>
+        <title>☀️ City vs City Weather Comparison</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -112,10 +112,10 @@
             <input type="hidden" name="nonce" id="nonce" value="" />
 
             <!-- City 1 input -->
-            <input type="text" name="city1" placeholder="City 1 (e.g. Melbourne)" required />
+            <input type="text" name="city1" placeholder="City 1 (e.g. Melbourne)" required autocomplete="off" />
 
             <!-- City 2 input -->
-            <input type="text" name="city2" placeholder="City 2 (e.g. Sydney)" required />
+            <input type="text" name="city2" placeholder="City 2 (e.g. Sydney)" required autocomplete="off" />
             <!-- Input form for min/max date  -->
             <input type="date" name="startDate" min="1940-01-01" max="{{ max_date }}" value="{{ max_date }}" required />
             <input type="date" name="endDate" min="1940-01-01" max="{{ max_date }}" value="{{ max_date }}" required />
@@ -130,6 +130,20 @@
                     document.getElementById("spinner").style.display = "block";
                 });
         </script>
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="/about" style="
+                                    display: inline-block;
+                                    padding: 0.6rem 1.2rem;
+                                    background: #eee;
+                                    border-radius: 4px;
+                                    text-decoration: none;
+                                    color: #007bff;
+                                    font-weight: bold;
+                                    border: 1px solid #ccc;
+                                   ">About this project</a>
+        </div>
+
+
     </body>
 
 </html>

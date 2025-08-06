@@ -51,6 +51,9 @@ def compare():
         metrics2=metrics2
     )
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 
